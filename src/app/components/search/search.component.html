@@ -1,0 +1,22 @@
+<section>
+    <div class="section">
+      <div class="layer">
+       <h2>البحث عن مركبة / دراجة</h2>
+
+       <div class="search">
+        <h3>أدخل رقم اللوحة</h3>
+        <form [formGroup]="SearchForm">
+            <input formControlName="Id" type="text">
+
+        </form>
+
+        <div class="btns">
+          <a  [routerLink]="['/VehicleDetails',SearchForm.value.Id]">بحث</a>
+            <!-- <input (click)="search(SearchForm)"  type="button" value="بحث"> -->
+            <input (click)="back()" type="button" value="خروج">
+        </div>
+       </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,106 @@
+
+<section>
+    <div class="section">
+      <div class="layer">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-xl-6 col-md-6 col-l-12">
+              <div class="text">
+                <div>
+                  <h2>اشتري الان <br> سيارة احلامك من هنا <br>بسهولة و أمان</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscingelit Nullam erat tellus, pharetr .</p>
+                </div>
+  
+              </div>
+  
+            </div>
+            <div class="col-xl-6 col-md-6 col-l-12">
+              <div class="formcontainer">
+  
+                <div class="form">
+  
+                  <h2>انشاء حساب </h2>
+                  <Form [formGroup]="addUserForm" (ngSubmit)="sendUserData(addUserForm)">
+  
+                    <div class="input-container">
+                      <i class="fa-solid fa-user icon"></i>
+                      <input formControlName="firstName" type="text" placeholder=" الاسم الاول ">
+                      <div *ngIf="addUserForm.controls['firstName'].errors&&addUserForm.controls['firstName'].touched " class="error p-2">
+                        <p *ngIf="addUserForm.controls['firstName'].errors['required']">الاسم الاول مطلوب</p>
+                        <p *ngIf="addUserForm.controls['firstName'].errors['minlength']">الاسم الاول لايقل عن ثلاثه احرف</p>
+                        <p *ngIf="addUserForm.controls['firstName'].errors['maxlength']">الاسم الاول لايزيد عن 10 احرف</p>
+                    </div>
+                    </div>
+                    <div class="input-container">
+                      <i class="fa-solid fa-user icon"></i>
+                      <input formControlName="lastName" type="text" placeholder=" الاسم الثاني ">
+                      <div *ngIf="addUserForm.controls['lastName'].errors&&addUserForm.controls['lastName'].touched " class="error p-2">
+                        <p *ngIf="addUserForm.controls['lastName'].errors['required']">الاسم الثاني مطلوب</p>
+                        <p *ngIf="addUserForm.controls['lastName'].errors['minlength']">الاسم الثاني لايقل عن ثلاثه احرف</p>
+                        <p *ngIf="addUserForm.controls['lastName'].errors['maxlength']">الاسم الثاني لايزيد عن 10 احرف</p>
+                    </div>
+  
+                    </div>
+                    <div class="input-container">
+                      <i class="fa-solid fa-user icon"></i>
+                      <input formControlName="userName" type="text" placeholder="الحساب الخاص بك">
+                      <div *ngIf="addUserForm.controls['userName'].errors&&addUserForm.controls['userName'].touched " class="error p-2">
+                        <p *ngIf="addUserForm.controls['userName'].errors['required']">اسم الحساب  مطلوب</p>
+                        <p *ngIf="addUserForm.controls['userName'].errors['minlength']">اسم الحساب لايقل عن 6 احرف</p>
+                        <p *ngIf="addUserForm.controls['userName'].errors['maxlength']">اسم الحساب لايزيد عن 30 احرف</p>
+                    </div>
+                    </div>
+                    <div class="input-container">
+                      <i class="fa-solid fa-phone  icon"></i>
+                      <input formControlName="phoneNumber" type="text" placeholder=" الهاتف ">
+                      <div *ngIf="addUserForm.controls['phoneNumber'].errors&&addUserForm.controls['phoneNumber'].touched " class="error p-2">
+                        <p *ngIf="addUserForm.controls['phoneNumber'].errors['required']">الهاتف  مطلوب</p>
+                        <p *ngIf="addUserForm.controls['phoneNumber'].errors['pattern']">الهاتف غير صحيح</p>
+                    </div>
+                    </div>
+                    <div class="input-container">
+                      <i class="fa-solid fa-unlock icon"></i>
+                      <input formControlName="password" type="password" placeholder="كلمة المرور ">
+                      <div *ngIf="addUserForm.controls['password'].errors&&addUserForm.controls['password'].touched " class="error p-2">
+                        <p *ngIf="addUserForm.controls['password'].errors['required']">كلمة المرور مطلوبة</p>
+                        <p *ngIf="addUserForm.controls['password'].errors['minlength']">كلمه المرو لا تقل عن 6احرف او ارقام </p>
+                    </div>
+                    </div>
+                    <div class="input-container">
+                      <i class="fa-solid fa-unlock icon"></i>
+                      <input formControlName="confirmPassword" type="password" placeholder="اعادة كلمة المرور ">
+                      
+                    </div>
+                    <div class="roleCollection">
+                      <label (click)="changeStatusOk()" [ngClass]="{available:okstatus}" for="Admin" class="role  ">
+                        <input class="d-none" type="radio" formControlName="rolesIdList" id="Admin" value="2dfe7f27-1c53-4e58-8ad3-dac73decd5f7">
+                        رئيس
+                      </label>
+                      <label (click)="changeStatusUn()" [ngClass]="{unavailable:Unstatus}" for="employer"
+                        class="role unavailable">
+                        <input class="d-none" type="radio" formControlName="rolesIdList" id='employer' value="6f142e63-ebce-46c6-87c4-cf96363be85e">
+                        موظف
+                      </label>
+  
+                    </div>
+  
+                    <div class="btn">
+                      <button  [disabled]="addUserForm.invalid "> تسجيل </button>
+                      <button (click)="clear()">رفض </button>
+  
+                    </div>
+  
+                  </Form>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

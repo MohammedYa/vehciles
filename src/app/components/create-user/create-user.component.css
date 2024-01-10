@@ -1,0 +1,159 @@
+
+.section{
+    height: 140vh;
+    background-image: url('../../../assets/images/section1.png');
+    background-size: cover;
+    background-position: center center;
+    inset: 0;
+    position: relative;
+  }
+  .layer{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(5, 24, 33, 0.56);
+  
+  }
+  .container,.text,.col-xl-6 ,.row,.formcontainer{
+    height: 100%;
+  }
+  .text{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text h2{
+    font-family: Poppins;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 96px;
+    letter-spacing: 0em;
+    text-align: right;
+  
+  }
+  .text p{
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: right;
+  
+  }
+  .formcontainer{
+    background-color: rgba(101, 20, 93, 0.55);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .formcontainer h2{
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-align: center;
+  }
+  .formcontainer .form{
+    width: 100%;
+  }
+  .formcontainer input{
+   width: 90%;
+   height: 60px;
+   outline: none;
+   border: none;
+   border-bottom: 1px solid #fff;
+  margin: 20px;
+  padding: 35px;
+  background-color: transparent;
+  color: #fff;
+  
+  }
+  .formcontainer input::placeholder{
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.73);
+  
+  }
+  .formcontainer a{
+  
+    margin: 30px;
+    text-decoration: none;
+    color: #fff !important;
+  
+  }
+  .input-container{
+  position: relative;
+  }
+  .icon{
+    position: absolute;
+    top: 30%;
+    right: 10px;
+  
+    font-size: 30px;
+  }
+  .form button{
+  margin: auto;
+  margin-top: 20px;
+  width: 280px;
+  height: 56px;
+  border-radius: 19px;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
+  background-color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgba(101, 20, 93,1);
+  transition: all .05s;
+  border: none;
+  }
+  .form button:hover{
+  color: #fff;
+  background-color: rgba(101, 20, 93,1);
+  }
+  .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .roleCollection{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  margin-top: 20px;
+  }
+  .available{
+    color: #fff!important;
+    background-color: #93BC39;;
+   }
+   .unavailable{
+    background-color:#EE3E54;
+    color: #fff !important;
+   }
+  .role{
+  border: 1px solid #fff;
+  width: 40%;
+  height: 80px;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  }
+  
