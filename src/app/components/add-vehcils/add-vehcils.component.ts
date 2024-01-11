@@ -28,14 +28,33 @@ export class AddVehcilsComponent {
   }
 
   url:string= '../../../assets/images/add-image 1.png' ;
-  onSelectFile(e:any){
-  if (e.target.files){
-     var reader= new FileReader();
-     reader.readAsDataURL(e.target.files[0]);
-     reader.onload=(event:any)=> {
-      this.url=event.target.result ;
-     }
+  // onSelectFile(e:any){
+  // if (e.target.files){
+  //    var reader= new FileReader();
+  //    reader.readAsDataURL(e.target.files[0]);
+  //    reader.onload=(event:any)=> {
+  //     this.url=event.target.result ;
+  //    }
+  //   }
+  // }
+ 
+  onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+
+    if (file) {
+      this.uploadFile(file);
     }
   }
+
+  uploadFile(file: File): void {
+    // Perform the file upload logic here (e.g., using Angular HttpClient)
+    // You can use FormData to send the file to a server
+
+    // For demonstration purposes, log the file details
+    console.log('File Name:', file.name);
+    console.log('File Size:', file.size);
+    console.log('File Type:', file.type);
+  }
+
 }
 

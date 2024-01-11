@@ -10,8 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 export class VehcilsDitailsComponent {
   Id:string=""
   vehcile:any={}
+  errors:string=""
+  isValid=true
 constructor( private _GetVehcilService: VehcilsDitailsService  ,private _ActivatedRoute  :ActivatedRoute   ){
  this.Id= _ActivatedRoute.snapshot.params['Id']
+ console.log(this.Id);
+ 
  this.getVehcils(this.Id)
 }
   ngOnInit(): void {
@@ -25,7 +29,8 @@ constructor( private _GetVehcilService: VehcilsDitailsService  ,private _Activat
     }
     ,(error)=>{
       console.log(error);
-      
+      this.errors=error.error.message
+      this.isValid=false
     }
   )
   }
