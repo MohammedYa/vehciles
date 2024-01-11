@@ -1,115 +1,181 @@
 .main {
-    height: 922px;
-    background-image: url("../../../assets/images/section1.png");
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    flex-shrink: 0;
-  }
-  
-  .layer {
-    position: absolute;
-    inset: 0;
-    background: rgba(101, 20, 93, 0.55);
-  }
-  
-  .layer h1 {
-    color: #fff;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 15px;
-  }
-  .container {
-    margin-top: 30px;
-  }
-  .form {
-    margin-right: 20px;
-  }
-  .inputEdit {
-    width: 339px;
-    height: 56px;
-    flex-shrink: 0;
-    border-radius: 19px;
-    background: #fff;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
-    border: none;
-    margin-right: 20px;
-    margin-bottom: 15px;
-  }
-  .lapelEdit {
-    color: #fff;
-    text-align: center;
-    font-family: Cairo;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-left: 15px;
-  }
-  .checkLabel {
-    color: #fff;
-    text-align: right;
-    font-family: Cairo;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    padding: 10px;
-  }
-  .checkInput {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    fill: #fff;
-  }
-  .area-edit {
-    border-radius: 15px;
-  }
-  .btn {
-    width: 200px;
-    height: 56px;
-    flex-shrink: 0;
-    border-radius: 19px;
-    background: #fff;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
-    color: #65145d;
+  height: 922px;
+  background-image: url("../../../assets/images/section1.png");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(101, 20, 93, 0.55);
+}
+
+.layer h1 {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 15px;
+}
+.container {
+  margin-top: 30px;
+}
+.form {
+  margin-right: 20px;
+}
+.inputEdit {
+  width: 339px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
+  border: none;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.lapelEdit {
+  color: #fff;
+  text-align: center;
+  font-family: Cairo;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 15px;
+}
+.checkLabel {
+  color: #fff;
+  text-align: right;
+  font-family: Cairo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 10px;
+}
+.checkInput {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #fff;
+}
+.area-edit {
+  border-radius: 15px;
+}
+.btn {
+  width: 200px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
+  color: #65145d;
+}
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+.addImg {
+  width: 299px;
+  height: 232px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.addImg p {
+  color: #65145d;
+  text-align: right;
+  font-family: Cairo;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 10px;
+}
+.addImg img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.car-img {
+  width: 100%;
+}
+@media screen and (min-width:992px ) and (max-width: 1200px) {
+.btn {
+  width: 150px;
+  height: 46px;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .main {
+    height: 1338px !important;
   }
   .btn-box {
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
-  .addImg {
-    width: 299px;
-    height: 232px;
-    flex-shrink: 0;
-    border-radius: 19px;
-    background: #fff;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
+  .main {
+    height: 1347px !important;
   }
-  .addImg p {
-    color: #65145d;
-    text-align: right;
-    font-family: Cairo;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-top: 10px;
-  }
-  .addImg img {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-  }
-  .car-img {
-    width: 100%;
-  }
-  
+
+}
+@media screen and (min-width: 360px) and (max-width: 500px) {
+.main {
+height:1266px ;
+}
+.layer h1 {
+  font-size: 25px;
+}
+.form {
+  margin-right: 5px !important;
+}
+.labol-w {
+  width: 100px;
+}
+.labol-h {
+  width: 200px;
+}
+.checkBox-groub {
+  width: 217px;
+}
+.car-type {
+  width: 290px;
+}
+table {
+  border-bottom: 2px white solid;
+}
+.inputEdit {
+  width: 210px;
+  height: 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.lapelEdit {
+  font-size: 18px;
+  margin-left: 0px;
+}
+.area-edit {
+  height: 170px;
+}
+.addImg {
+  width: 230px;
+  height: 175px;
+}
+.btn {
+  width: 140px;
+  height: 40px;
+}
+}
