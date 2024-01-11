@@ -1,16 +1,19 @@
 .main {
-    background-image: url("../../../assets/images/section1.png");
-    height: 922px;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .layer {
-    position: absolute;
-    inset: 0;
-    background: rgba(101, 20, 93, 0.55);
-  }
+  background-image: url("../../../assets/images/section1.png");
+  /* height: 922px; */
+  height: auto;
+  background-position: center center;
+  background-size: cover;
+  /* position: relative; */
+
+}
+
+.layer {
+  /* position: absolute;
+  inset: 0; */
+  background: rgba(101, 20, 93, 0.55);
+  padding-top: 20px;
+}
   .layer h2 {
     color: #fff;
     text-align: center;
@@ -19,8 +22,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 20px;
+
   }
   .box {
     width: 100%;
@@ -31,26 +35,26 @@
   }
   .img-box {
     width: 310px;
-    height: 355px;
+    /* height: 355px; */
     flex-shrink: 0;
     margin: 8px;
-  }
-  .img-box img {
-    width: 100%;
+    position: relative;
+    overflow: hidden;
     border-radius: 20px;
   }
-  .layer-box {
-    position: relative;
-  }
+
   .layer2 {
     position: absolute;
     inset: 0;
     background: rgba(101, 20, 93, 0.53);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
   }
-  .layer2 p a {
+  .img-box:hover .layer2 {
+    display: flex;
+  }
+  .layer2 p  {
     text-decoration: none;
     color: #fff;
     text-align: center;
@@ -60,4 +64,3 @@
     font-weight: 700;
     line-height: normal;
   }
-  
