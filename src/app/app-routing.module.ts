@@ -10,6 +10,7 @@ import { VehcilsDitailsComponent } from './components/vehcils-ditails/vehcils-di
 import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SaleVehcilsComponent } from './components/sale-vehcils/sale-vehcils.component';
+import { VehcilsComponent } from './components/vehcils/vehcils.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"/Login",pathMatch:"full"},
@@ -20,9 +21,8 @@ const routes: Routes = [
   {path:'addVehicle',component:AddVehcilsComponent},
   {path:'search',component:SearchComponent},
   {path:"VehicleDetails/:Id",component:VehcilsDitailsComponent},
-  {path:"vehicles",component:AddVehcilsComponent},
+  {path:"vehicles",component:VehcilsComponent},
   {path:'saleVehicles',component:SaleVehcilsComponent},
-  {path:'Vehicles-out',component:VehcilsOutComponent},
   {path:'vehiclesOut',component:VehcilsOutComponent},
   {path:'**',component:NotfoundComponent},
 
