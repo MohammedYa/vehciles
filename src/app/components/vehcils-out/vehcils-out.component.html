@@ -4,19 +4,19 @@
         <div class="cartona">
           <h2>بيع مركبة / دراجة</h2>
           <div class="form-box">
-            <form>
+            <form [formGroup]="getOutForm" (ngSubmit)="saleForm">
               <table>
                 <tr>
                   <td><label class="lab" for=""> جهة الأخراج</label></td>
-                  <td><input class="inp" type="text" name="" id=""></td>
-                </tr>
-                <tr class="">
-                  <td><label class="lab " for=""> سبب الأخراج</label></td>
-                  <td><input class="inp " type="text" name="" id=""></td>
+                  <td><input formControlName="outDestination" class="inp" type="text" name="" id=""></td>
                 </tr>
                 <tr>
-                  <td><label class="lab" for=""> قيمة البيع</label></td>
-                  <td><input class="inp" type="text" name="" id=""></td>
+                  <td><label class="lab " for=""> سبب الأخراج</label></td>
+                  <td><input formControlName="caseOfOut" class="inp " type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                  <td><label class="lab" for="">  التاريخ</label></td>
+                  <td><input formControlName="date" class="inp" type="text" name="" id=""></td>
                 </tr>
               </table>
               <div class="btn-box">

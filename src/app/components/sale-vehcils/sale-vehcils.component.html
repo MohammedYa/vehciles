@@ -4,19 +4,19 @@
         <div class="cartona">
           <h2>بيع مركبة / دراجة</h2>
           <div class="form-box">
-            <form>
+            <form [formGroup]="gatSaleForm" (ngSubmit)="saleForm(gatSaleForm)">
               <table>
                 <tr>
                   <td><label class="lab" for="">جهة الشراء</label></td>
-                  <td><input class="inp" type="text" name="" id=""></td>
+                  <td><input formControlName="buyingDestination" class="inp" type="text" name="" id=""></td>
                 </tr>
                 <tr>
                   <td><label class="lab " for=""> هوية المشترى</label></td>
-                  <td><input class="inp " type="text" name="" id=""></td>
+                  <td><input formControlName="buyerIdentity"  class="inp " type="text" name="" id=""></td>
                 </tr>
                 <tr>
                   <td><label class="lab" for=""> قيمة البيع</label></td>
-                  <td><input class="inp" type="text" name="" id=""></td>
+                  <td><input formControlName="value"  class="inp" type="text" name="" id=""></td>
                 </tr>
               </table>
               <div class="btn-box">
@@ -27,8 +27,7 @@
             </form>
           </div>
         </div>
-  
+
       </div>
     </div>
   </section>
-  

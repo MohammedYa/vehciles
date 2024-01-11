@@ -1,16 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AddVechilsService {
+export class GetAllVehcilsService {
+  constructor(private _HttpClient:HttpClient) {}
 
-  constructor(private _httpClient:HttpClient) { }
-  addVehcils(form:FormGroup):Observable<any>{
 
+  getAllVehcils():Observable<any> {
+    
     const token = localStorage.getItem("userToken");
 
       // Create headers with Authorization token
@@ -18,6 +18,8 @@ export class AddVechilsService {
         'Authorization': `Bearer ${token}`
       });
 
-    return this._httpClient.post(`http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/Create`,form,{headers})
-   }
+   return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/GetAll',{headers});
+
+  }
+
 }

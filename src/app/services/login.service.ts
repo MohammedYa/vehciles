@@ -8,13 +8,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
+
+
   UserData=new BehaviorSubject(null)
-  constructor(private _HttpClient:HttpClient,private _Router:Router) { 
+  
+  constructor(private _HttpClient:HttpClient,private _Router:Router) {
     if(localStorage.getItem('userToken')!=null){
       this.saveUserData( )
     }
   }
-  
+
   login(form:any):Observable<any>{
   return this._HttpClient.post("http://mohammedramadan-001-site1.htempurl.com/api/Login",form)
   }
@@ -28,6 +31,5 @@ export class LoginService {
     localStorage.removeItem("isAdmin")
     this.UserData.next(null)
     this._Router.navigateByUrl('/Login')
-  
+
   }}
-  
