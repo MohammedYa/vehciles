@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:"vehicles",component:VehcilsComponent},
   {path:'saleVehicles',component:SaleVehcilsComponent},
   {path:'vehiclesOut',component:VehcilsOutComponent},
-  {path:'**',component:NotfoundComponent},
+  // {path:'**',component:NotfoundComponent},
 
   ];
 @NgModule({

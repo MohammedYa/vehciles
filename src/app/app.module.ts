@@ -39,7 +39,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,  
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],

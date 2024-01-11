@@ -1,5 +1,8 @@
 <section>
-    <div class="container">
+    <div *ngIf="!isValid" class="container text-center">
+      <h1>{{errors}}</h1>
+    </div>
+    <div  *ngIf="isValid" class="container">
         <div class="row">
             <div class="col-md-6">
                 <table>
