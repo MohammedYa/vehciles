@@ -6,6 +6,7 @@
     position: relative;
     flex-shrink: 0;
   }
+  
   .layer {
     position: absolute;
     inset: 0;
@@ -21,11 +22,15 @@
     line-height: normal;
     padding: 20px;
   }
+  table  tr{
+    height: 70px;
+  }
   .cartona {
     position: relative;
   }
   .form-box {
-    width: 600px;
+  padding: 10px;
+    width: 700px;
     height: 300px;
     flex-shrink: 0;
     border-radius: 19px;
@@ -69,5 +74,25 @@
     background: #65145d;
     box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
     color: #fff;
+  }
+  .inputEdit,.inputselect,.inputselect2 {
+    width: 339px;
+    height: 56px;
+    border-radius: 19px;
+    background: #fff;
+    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
+    border: 1px solid #65145d;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  font-size: 18px;
+  padding: 10px;
+  }
+  .inputselect,.inputselect2{
+    width: 100px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  .inputselect2{
+  width: 120px;
   }
   

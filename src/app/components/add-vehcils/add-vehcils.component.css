@@ -29,16 +29,25 @@
 .form {
   margin-right: 20px;
 }
-.inputEdit {
+.inputEdit,.inputselect,.inputselect2 {
   width: 339px;
   height: 56px;
-  flex-shrink: 0;
   border-radius: 19px;
   background: #fff;
   box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
   border: none;
   margin-right: 20px;
   margin-bottom: 15px;
+font-size: 18px;
+padding: 10px;
+}
+.inputselect,.inputselect2{
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.inputselect2{
+width: 120px;
 }
 .lapelEdit {
   color: #fff;

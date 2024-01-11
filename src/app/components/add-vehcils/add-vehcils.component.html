@@ -58,7 +58,35 @@
                     <label class="lapelEdit" for="">تاريخ الدخول </label>
                   </td>
                   <td class="labol-h">
-                    <input formControlName="AddedDate" class="inputEdit " type="text">
+                    <div >
+                      <select formControlName="Addedday" class="inputselect ">
+                        <option value="اليوم"disabled >اليوم</option>
+                        <option value="السبت">السبت</option>
+                        <option value="الاحد">الاحد</option>
+                        <option value="الاثنين">الاثنين</option>
+                        <option value="الثلاثاء">الثلاثاء</option>
+                        <option value="الاربعاء">الاربعاء</option>
+                        <option value="الخميس">الخميس</option>
+                        <option value="الجمعة">الجمعة</option>
+                      </select>
+                      <select  formControlName="Addedmonth"class="inputselect2 ">
+                        <option value="الشهر" disabled >الشهر</option>
+                        <option value="محرم">محرم</option>
+                        <option value="صفر">صفر</option>
+                        <option value="ربيع الاول ">ربيع الاول </option>
+                        <option value="ربيع الثاني ">ربيع الثاني </option>
+                        <option value=" جمادي الاول">جمادي الاول </option>
+                        <option value="جمادي الاخرة">جمادي الاخرة</option>
+                        <option value="رجب">رجب</option>
+                        <option value="شعبان">شعبان</option>
+                        <option value="رمضان">رمضان</option>
+                        <option value="شوال">شوال</option>
+                        <option value="ذو القعده">ذو القعده</option>
+                        <option value="ذو الحجة">ذو الحجة</option>
+                      </select>
+                      <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة "> 
+
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -142,8 +170,9 @@
                   <p>حمل الصورة</p>
                 </label>
               </div>
-              <input class="d-none" id="addPhoto" type="file" (change)="onFileSelected($event)">
+              <input class="d-none" id="addPhoto" type="file" (change)="onSelectFile($event)">
             </div>
+            <h4 *ngIf="er" class="err text-white">*{{error}}</h4>
 
             <div class="btn-box mt-3">
 
@@ -151,11 +180,11 @@
               <button class="btn m-1">خروج</button>
 
             </div>
-
           </div>
 
         </div>
       </form>
+
     </div>
   </div>
 </div>
