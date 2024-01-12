@@ -133,8 +133,13 @@
       height: auto !important;
   }
   .section{
-    height: 139vh;
+    height: 90vh;
   }
+  .form button{
+
+    width: 150px;
+
+    }
   }
   @media screen and (min-width:500px)and (max-width:768px) {
   .col-xl-6{

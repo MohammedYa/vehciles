@@ -48,6 +48,79 @@ padding: 10px;
 .note{
 width: 405px;
 height: 222px;
-
-
+}
+@media screen and (min-width:992px)and (max-width:1200px) {
+.img{
+text-align: left;
+}
+.img img{
+width: 300px;
+height: 300px;
+}
+.btns{
+    text-align: center;
+}
+}
+@media screen and (min-width:768px)and (max-width:992px) {
+.img{
+text-align: left;
+}
+.img img{
+width: 300px;
+height: 300px;
+}
+.btns{
+text-align: center;
+}
+.content{
+    width: 277px;
+}
+.title{
+    font-size: 25px;
+}
+.note{
+    height: 200px;
+}
+}
+@media screen and (min-width:500px)and (max-width:768px) {
+.img{
+text-align: center;
+}
+.img img{
+width: 300px;
+height: 300px;
+}
+.btns{
+text-align: center;
+}
+.content{
+width: 277px;
+}
+.title{
+font-size: 25px;
+}
+.note{
+height: 200px;
+}
+}
+@media screen and (min-width:360px)and (max-width:500px) {
+.img{
+text-align: center;
+}
+.img img{
+width: 300px;
+height: 300px;
+}
+.btns{
+text-align: center;
+}
+.content{
+width: 231px;
+}
+.title{
+font-size: 25px;
+}
+.note{
+height: 200px;
+}
 }
