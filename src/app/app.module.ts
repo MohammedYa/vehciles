@@ -17,6 +17,7 @@ import { SaleVehcilsComponent } from './components/sale-vehcils/sale-vehcils.com
 import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.component';
 import { VehcilsComponent } from './components/vehcils/vehcils.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     SaleVehcilsComponent,
     VehcilsOutComponent,
     VehcilsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
