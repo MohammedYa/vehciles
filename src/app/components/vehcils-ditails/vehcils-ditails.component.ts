@@ -28,9 +28,9 @@ constructor( private _GetVehcilService: VehcilsDitailsService  ,private _Activat
       this.vehcile=res
     }
     ,(error)=>{
-      console.log(error);
-      this.errors=error.error.message
-      this.isValid=false
+      // console.log(error);
+      // this.errors=error.error.message
+      // this.isValid=false
     }
   )
   }
