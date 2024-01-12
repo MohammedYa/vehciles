@@ -6,7 +6,7 @@
     position: relative;
     flex-shrink: 0;
   }
-  
+
   .layer {
     position: absolute;
     inset: 0;
@@ -95,4 +95,63 @@
   .inputselect2{
   width: 120px;
   }
-  
+
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .form-box {
+      right: 190px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .form-box {
+      right: 75px;
+    }
+  }
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    .lab {
+      font-size: 19px;
+    }
+    .inp {
+      width: 200px;
+      height: 30px;
+    }
+    .btn {
+      width: 90px;
+      height: 30px;
+    }
+    .btn-box {
+      justify-content: space-around;
+    }
+    .form-box {
+      width: 350px;
+      height: 200px;
+      right: 68px;
+
+    }
+  }
+  @media screen and (min-width: 360px) and (max-width: 500px) {
+    .layer h2 {
+      font-size: 30px;
+    }
+    .lab {
+      font-size: 15px;
+    }
+    .inp {
+      width: 150px;
+      height: 25px;
+    }
+    .btn {
+      width: 70px;
+      height: 28px;
+      font-size: 8px;
+    }
+    .btn-box {
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    .form-box {
+      width: 300px;
+      height: 150px;
+      /* right: 30px; */
+      right: 95px;
+    }
+  }

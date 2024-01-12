@@ -1,73 +1,132 @@
 .main {
-    background-image: url("../../../assets/images/section1.png");
-    background-position: center center;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .layer {
-    position: absolute;
-    inset: 0;
-    background: rgba(101, 20, 93, 0.55);
-  }
-  .layer h2 {
-    color: #fff;
-    text-align: center;
-    font-family: Cairo;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 20px;
-  }
-  .cartona {
-    position: relative;
-  }
+  background-image: url("../../../assets/images/section1.png");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  flex-shrink: 0;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(101, 20, 93, 0.55);
+}
+.layer h2 {
+  color: #fff;
+  text-align: center;
+  font-family: Cairo;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 20px;
+}
+.cartona {
+  position: relative;
+}
+.form-box {
+  width: 600px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  position: absolute;
+  top: 130px;
+  right: 370px;
+}
+.lab {
+  color: #65145d;
+  text-align: right;
+  font-family: Cairo;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.inp {
+  width: 400px;
+  height: 40px;
+  border-radius: 19px;
+  border: 1px solid #65145d;
+  background: #fff;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
+}
+.btn-box {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn {
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 19px;
+  background: #65145d;
+  box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   .form-box {
-    width: 600px;
-    height: 300px;
-    flex-shrink: 0;
-    border-radius: 19px;
-    background: #fff;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center !important;
-    position: absolute;
-    top: 130px;
-    right: 370px;
+    right: 190px;
   }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .form-box {
+    right: 75px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
   .lab {
-    color: #65145d;
-    text-align: right;
-    font-family: Cairo;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    font-size: 19px;
   }
   .inp {
-    width: 400px;
-    height: 40px;
-    border-radius: 19px;
-    border: 1px solid #65145d;
-    background: #fff;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
-  }
-  .btn-box {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 200px;
+    height: 30px;
   }
   .btn {
-    width: 150px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 19px;
-    background: #65145d;
-    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
-    color: #fff;
+    width: 90px;
+    height: 30px;
   }
-  
+  .btn-box {
+    justify-content: space-around;
+  }
+  .form-box {
+    width: 350px;
+    height: 200px;
+    right: 68px;
+
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 500px) {
+  .layer h2 {
+    font-size: 30px;
+  }
+  .lab {
+    font-size: 15px;
+  }
+  .inp {
+    width: 150px;
+    height: 25px;
+  }
+  .btn {
+    width: 70px;
+    height: 28px;
+    font-size: 8px;
+  }
+  .btn-box {
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  .form-box {
+    width: 300px;
+    height: 150px;
+    /* right: 30px; */
+    right: 95px;
+  }
+}
