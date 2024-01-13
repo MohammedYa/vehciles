@@ -2,7 +2,7 @@
   background-image: url("../../../assets/images/section1.png");
   background-position: center center;
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   flex-shrink: 0;
 }
@@ -25,6 +25,7 @@
   position: relative;
 }
 .form-box {
+  margin: auto;
   width: 600px;
   height: 300px;
   flex-shrink: 0;
@@ -34,9 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center !important;
-  position: absolute;
-  top: 130px;
-  right: 370px;
+
 }
 .lab {
   color: #65145d;
@@ -71,6 +70,7 @@
   color: #fff;
 }
 
+
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .form-box {
     right: 190px;
@@ -86,21 +86,19 @@
     font-size: 19px;
   }
   .inp {
-    width: 200px;
-    height: 30px;
-  }
-  .btn {
-    width: 90px;
-    height: 30px;
-  }
+    width: 289px;
+    height: 44px;
+}
+  .btn{
+    width: 114px;
+    height: 45px;
+}
   .btn-box {
     justify-content: space-around;
   }
-  .form-box {
-    width: 350px;
-    height: 200px;
-    right: 68px;
-
+  .form-box { 
+    width: 476px;
+    height: 335px;
   }
 }
 @media screen and (min-width: 360px) and (max-width: 500px) {

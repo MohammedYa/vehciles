@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class AddVechilsService {
 
   constructor(private _httpClient:HttpClient) { }
-  addVehcils(form:FormGroup):Observable<any>{
+  addVehcils(form:any):Observable<any>{
 
     const token = localStorage.getItem("userToken");
 
