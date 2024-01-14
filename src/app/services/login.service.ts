@@ -11,6 +11,7 @@ export class LoginService {
 
 
   UserData=new BehaviorSubject(null)
+  isAdmin=new BehaviorSubject(null)
   
   constructor(private _HttpClient:HttpClient,private _Router:Router) {
     if(localStorage.getItem('userToken')!=null){
@@ -22,9 +23,12 @@ export class LoginService {
   return this._HttpClient.post("http://mohammedramadan-001-site1.htempurl.com/api/Login",form)
   }
   saveUserData(){
-  let encodedToken=localStorage.getItem("userToken")
-  let decodedToken:any=jwtDecode(<string>encodedToken)
-  this.UserData.next(decodedToken)
+    let encodedToken=localStorage.getItem("userToken")
+    let decodedToken:any=jwtDecode(<string>encodedToken)
+    let Admin:any=<string>localStorage.getItem("isAdmin")
+    this.UserData.next(decodedToken)
+    this.isAdmin.next(Admin)
+
   }
   logOut(){
     localStorage.removeItem("userToken")

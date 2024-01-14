@@ -1,12 +1,29 @@
 <div class="main">
   <div class="layer">
     <h2>المركبات / الدراجات المتوفره</h2>
+
+    <div class="btn-box ">
+      <button [ngClass]="{'active' : condition}" (click)="changeCon1()"class="btn  ">المركبات المتاحة</button>
+      <button [ngClass]="{'active' : !condition}" (click)="changeCon()" class="btn">المحذوفات</button>
+    </div>
     <div class="box m-auto">
 
-      <div *ngFor="let vehcil of vehcils">
+      <div *ngFor="let vehcil of vehcils" >
      
         
-        <div class="img-box">
+        <div *ngIf="!vehcil.isDeleted&&condition"  class="img-box">
+          <img class="w-100" [src]="vehcil.imageUrl" alt="">
+          <div class="layer2">
+           <a [routerLink]="['/VehicleDetails',vehcil.plateNumber]"> <p>المزيد ...</p></a>
+          </div>
+          <i *ngIf="vehcil.isDeleted" (click)="revertVehcils(vehcil.id)" class="fa-solid fa-clock-rotate-left revert"></i>
+        </div>
+     
+      </div>
+      <div *ngFor="let vehcil of vehcils" >
+     
+        
+        <div *ngIf="vehcil.isDeleted&&condition1" class="img-box">
           <img class="w-100" [src]="vehcil.imageUrl" alt="">
           <div class="layer2">
            <a [routerLink]="['/VehicleDetails',vehcil.plateNumber]"> <p>المزيد ...</p></a>
