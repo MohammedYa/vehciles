@@ -7,42 +7,29 @@ import { LoginService } from '../../services/login.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isAdmin:boolean=false;
-  role=localStorage.getItem("isAdmin")
-  isLogin:boolean=false
-  constructor(private _LoginService:LoginService ){
-  }
-  ngOnInit(): void {
-    this.islogin()
+  constructor(private _LoginService:LoginService ){    
 
+  }
+  ngOnInit(): void 
+  {
+    
   }
   logOut(){
     this._LoginService.logOut()
   }
-  islogin(){
-this._LoginService.UserData.subscribe(
-      ()=>{
-        if(this._LoginService.UserData.getValue()!=null){
-          this.isLogin=true 
-            if(this.role==="true"){
-            this.isAdmin=true
-            }
-            else{
-            this.isAdmin=false
-            }
-        }
-        else{
-          this.isLogin=false
-            if(this.role==="true"){
-            this.isAdmin=true
-            }
-            else{
-            this.isAdmin=false
-            }
-        }
-      }
-)
-    
+      
+
+  isLogin(){
+if(localStorage.getItem("userToken"))
+return true
+else
+return false
+}
+isAdmin(){
+  if(localStorage.getItem("isAdmin")==='true')
+  return true
+  else
+  return false
   }
 }
 

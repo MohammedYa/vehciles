@@ -11,29 +11,31 @@ import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.compon
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SaleVehcilsComponent } from './components/sale-vehcils/sale-vehcils.component';
 import { VehcilsComponent } from './components/vehcils/vehcils.component';
-
 import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
-
 import { UsersComponent } from './components/users/users.component';
 import { ScrapComponent } from './components/scrap/scrap.component';
+import { AuthGuard } from './gards/auth.guard';
+import { IsAdminGuard } from './gards/is-admin.guard';
+import { ReportsComponent } from './components/reports/reports.component';
 
 
 const routes: Routes = [
   {path:"",redirectTo:"/Login",pathMatch:"full"},
+  {path:'Login',component:LoginComponent}, 
   {path:"Home",component:HomeComponent},
-  {path:'Login',component:LoginComponent},
-  {path:'createUser',component:CreateUserComponent},
-  {path:'ForgetPass',component:ForgetPassComponent},
-  {path:'addVehicle',component:AddVehcilsComponent},
-  {path:'search',component:SearchComponent},
-  {path:"VehicleDetails/:Id",component:VehcilsDitailsComponent},
-  {path:"vehicles",component:VehcilsComponent},
-  {path:'users',component:UsersComponent},
-  {path:'saleVehicles',component:SaleVehcilsComponent},
-  {path:'vehiclesOut',component:VehcilsOutComponent},
-  {path:'Users',component:UsersComponent},
-  {path:'edit/:Id',component:EditvehcilsComponent},
-  {path:'scrapeVehicle',component:ScrapComponent},
+  {path:'createUser',canActivate:[AuthGuard,IsAdminGuard],component:CreateUserComponent},
+  {path:'ForgetPass',canActivate:[AuthGuard,IsAdminGuard],component:ForgetPassComponent},
+  {path:'addVehicle',canActivate:[AuthGuard],component:AddVehcilsComponent},
+  {path:'search',canActivate:[AuthGuard],component:SearchComponent},
+  {path:"VehicleDetails/:Id",canActivate:[AuthGuard],component:VehcilsDitailsComponent},
+  {path:"vehicles",canActivate:[IsAdminGuard,AuthGuard],component:VehcilsComponent},
+  {path:'Users',canActivate:[IsAdminGuard,AuthGuard],component:UsersComponent},
+  {path:'saleVehicles',canActivate:[AuthGuard],component:SaleVehcilsComponent},
+  {path:'vehiclesOut',canActivate:[AuthGuard],component:VehcilsOutComponent},
+  {path:'edit/:Id',canActivate:[AuthGuard],component:EditvehcilsComponent},
+  {path:'scrapeVehicle',canActivate:[AuthGuard],component:ScrapComponent},
+  {path:'reports',canActivate:[AuthGuard],component:ReportsComponent},
+  {path:'notFound',component:NotfoundComponent},
   {path:'**',component:NotfoundComponent},
 
   ];

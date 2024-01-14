@@ -14,31 +14,25 @@ export class LoginComponent {
       "userName":new FormControl(null,[Validators.minLength(3),Validators.maxLength(30),Validators.required]),
       "password":new FormControl(null,[Validators.pattern(/^[A-Za-z0-9]{6,}$/),Validators.required])
     }
-    )
-    sendLoginForm(form:FormGroup){
-      this._LoginService.login(form.value).subscribe(
-        (res)=>{
-          
-        if(res.message=="Successfully"){
-          localStorage.setItem("userToken",res.data.token)
-          localStorage.setItem("isAdmin",res.data.isAdmin)
-          this.navgate()
-        }
-        
-      }
-      ,(err)=>{
-        console.log(err);
-        
-      }
-      )
-    }
-    constructor(private _LoginService:LoginService,private _Router:Router){
-      
-    }
-    ngOnInit(): void {
-    }
-    navgate(){
-      this._Router.navigateByUrl('/Home')
-    
-    }
-    }
+)
+sendLoginForm(form:FormGroup){
+this._LoginService.login(form.value).subscribe(
+(res)=>{
+
+if(res.message=="Successfully"){
+this.LoginForm.reset()
+localStorage.setItem("userToken",res.data.token)
+localStorage.setItem("isAdmin",res.data.isAdmin)
+this._Router.navigateByUrl('/Home')
+}
+
+}
+,(err)=>{
+
+}
+)
+}
+constructor(private _LoginService:LoginService,private _Router:Router){}
+ngOnInit(): void {}
+ 
+}

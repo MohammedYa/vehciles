@@ -8,7 +8,9 @@ import { RevertVehcilService } from '../../services/revert-vehcil.service';
   styleUrl: './vehcils.component.css'
 })
 export class VehcilsComponent implements OnInit {
-
+  condition:boolean=true
+  condition1:boolean=false
+  isDeleted:boolean=false
   constructor( private _GetAllVehcilsService:GetAllVehcilsService,private _RevertVehcilService:RevertVehcilService ){
   this.getAllVehcils()
   }
@@ -17,7 +19,17 @@ export class VehcilsComponent implements OnInit {
   }
   
   vehcils:any=[];
-
+  changeCon(){
+    this.condition=false
+    this.condition1=true
+  }
+  changeCon1(){
+    this.condition1=false
+    this.condition=true
+  }
+  // isDeleted():boolean{
+  //   return true
+  // }
   getAllVehcils(){
     this._GetAllVehcilsService.getAllVehcils().subscribe((res)=>{
       

@@ -22,6 +22,9 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
 import { UsersComponent } from './components/users/users.component';
 import { ScrapComponent } from './components/scrap/scrap.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -41,14 +44,18 @@ import { ScrapComponent } from './components/scrap/scrap.component';
     ReportsComponent,
     EditvehcilsComponent,
     UsersComponent,
-    ScrapComponent
+    ScrapComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,  
-    HttpClientModule,
+    HttpClientModule, 
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule
 
   ],
   providers: [],
