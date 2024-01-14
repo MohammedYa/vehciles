@@ -11,6 +11,7 @@
   inset: 0;
   background: rgba(101, 20, 93, 0.55);
 }
+
 .layer h2 {
   color: #fff;
   text-align: center;
@@ -20,6 +21,12 @@
   font-weight: 700;
   line-height: normal;
   padding: 20px;
+}
+.succss{
+  color: rgb(34, 226, 34)!important;
+}
+.notsuccss{
+  color: rgb(248, 24, 24)!important;
 }
 .cartona {
   position: relative;

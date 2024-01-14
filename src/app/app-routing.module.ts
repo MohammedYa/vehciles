@@ -11,7 +11,11 @@ import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.compon
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SaleVehcilsComponent } from './components/sale-vehcils/sale-vehcils.component';
 import { VehcilsComponent } from './components/vehcils/vehcils.component';
+
+import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
+
 import { UsersComponent } from './components/users/users.component';
+
 
 const routes: Routes = [
   {path:"",redirectTo:"/Login",pathMatch:"full"},
@@ -26,6 +30,7 @@ const routes: Routes = [
   {path:'users',component:UsersComponent},
   {path:'saleVehicles',component:SaleVehcilsComponent},
   {path:'vehiclesOut',component:VehcilsOutComponent},
+  {path:'edit/:Id',component:EditvehcilsComponent},
   {path:'**',component:NotfoundComponent},
 
   ];

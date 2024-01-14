@@ -7,6 +7,10 @@
             <form [formGroup]="gatSaleForm" (ngSubmit)="saleForm(gatSaleForm)">
               <table>
                 <tr>
+                  <td><label class="lab" for=""> رقم اللوحة</label></td>
+                  <td><input formControlName="PlateNumber" class="inp" type="text" name="" id=""></td>
+                </tr>
+                <tr>
                   <td><label class="lab" for="">جهة الشراء</label></td>
                   <td><input formControlName="buyingDestination" class="inp" type="text" name="" id=""></td>
                 </tr>
@@ -25,9 +29,11 @@
                 <button class="btn">خروج</button>
               </div>
             </form>
+           
           </div>
         </div>
-
+        <h2 *ngIf="isSuccess" class="succss">تمت عملية البيع بنجاج</h2>
+        <h2 class="notsuccss">{{error}} </h2>
       </div>
     </div>
   </section>

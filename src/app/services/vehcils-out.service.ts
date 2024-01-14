@@ -20,7 +20,7 @@ export class VehcilsOutService {
     });
 
     return this._HttpClient.post(
-      'http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/SellVechicle',form,{headers});
+      'http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/VehicleOut',form,{headers});
   }
 
 }

@@ -32,7 +32,6 @@
   margin: auto;
   padding: 10px;
     width: 700px;
-    height: 300px;
     flex-shrink: 0;
     border-radius: 19px;
     background: #fff;
@@ -41,6 +40,12 @@
     justify-content: center;
     align-items: center !important;
    
+  }
+  .succss{
+    color: rgb(34, 226, 34)!important;
+  }
+  .notsuccss{
+    color: rgb(248, 24, 24)!important;
   }
   .lab {
     color: #65145d;

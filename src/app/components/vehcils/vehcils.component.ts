@@ -9,7 +9,7 @@ import { GetAllVehcilsService } from '../../services/get-all-vehcils.service';
 export class VehcilsComponent implements OnInit {
 
   constructor( private _GetAllVehcilsService:GetAllVehcilsService ){
-
+  this.getAllVehcils()
   }
   ngOnInit(): void {
 
@@ -19,7 +19,10 @@ export class VehcilsComponent implements OnInit {
 
   getAllVehcils(){
     this._GetAllVehcilsService.getAllVehcils().subscribe((res)=>{
-     this.vehcils=res
+      
+     this.vehcils=res   
+     console.log(this.vehcils);
+
     })
 
   }

@@ -18,6 +18,8 @@ import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.compon
 import { VehcilsComponent } from './components/vehcils/vehcils.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ReportsComponent } from './components/reports/reports.component';
+
+import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
 import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
@@ -36,6 +38,7 @@ import { UsersComponent } from './components/users/users.component';
     VehcilsComponent,
     NotfoundComponent,
     ReportsComponent,
+    EditvehcilsComponent
     UsersComponent
   ],
   imports: [

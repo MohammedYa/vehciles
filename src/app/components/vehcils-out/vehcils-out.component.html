@@ -4,8 +4,12 @@
         <div class="cartona">
           <h2>بيع مركبة / دراجة</h2>
           <div class="form-box">
-            <form [formGroup]="getOutForm" (ngSubmit)="saleForm">
+            <form [formGroup]="getOutForm" (ngSubmit)="saleForm(getOutForm)">
               <table>
+                <tr>
+                  <td><label class="lab" for=""> رقم اللوحة</label></td>
+                  <td><input formControlName="PlateNumber" class="inp" type="text" name="" id=""></td>
+                </tr>
                 <tr>
                   <td><label class="lab" for=""> جهة الأخراج</label></td>
                   <td><input formControlName="outDestination" class="inp" type="text" name="" id=""></td>
@@ -14,37 +18,35 @@
                   <td><label class="lab " for=""> سبب الأخراج</label></td>
                   <td><input formControlName="caseOfOut" class="inp " type="text" name="" id=""></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td><label class="lab" for="">  التاريخ</label></td>
                   <td>
                     <div >
-                      <select class="inputselect ">
-                        <option value="السبت">السبت</option>
-                        <option value="الاحد">الاحد</option>
-                        <option value="الاثنين">الاثنين</option>
-                        <option value="الثلاثاء">الثلاثاء</option>
-                        <option value="الاربعاء">الاربعاء</option>
-                        <option value="الخميس">الخميس</option>
-                        <option value="الجمعة">الجمعة</option>
+                      <select formControlName="Addedday" class="inputselect ">
+                        <option value="اليوم"disabled >اليوم</option>
+                        <option *ngFor="let day of dayes" [value]="day">{{day}}</option>
+                     
                       </select>
-                      <select class="inputselect2 ">
-                        <option value="محرم">محرم</option>
-                        <option value="صفر">صفر</option>
-                        <option value="ربيع الاول ">ربيع الاول </option>
-                        <option value="ربيع الثاني ">ربيع الثاني </option>
-                        <option value=" جمادي الاول">جمادي الاول </option>
-                        <option value="جمادي الاخرة">جمادي الاخرة</option>
-                        <option value="رجب">رجب</option>
-                        <option value="شعبان">شعبان</option>
-                        <option value="رمضان">رمضان</option>
-                        <option value="شوال">شوال</option>
-                        <option value="ذو القعده">ذو القعده</option>
-                        <option value="ذو الحجة">ذو الحجة</option>
+                      <select  formControlName="Addedmonth"class="inputselect2 ">
+                        <option value="الشهر" disabled >الشهر</option>
+                        <option value="01">محرم</option>
+                        <option value="02">صفر</option>
+                        <option value="03">ربيع الاول </option>
+                        <option value="04">ربيع الثاني </option>
+                        <option value="05">جمادي الاول </option>
+                        <option value="06">جمادي الاخرة</option>
+                        <option value="07">رجب</option>
+                        <option value="08">شعبان</option>
+                        <option value="09">رمضان</option>
+                        <option value="10">شوال</option>
+                        <option value="11">ذو القعده</option>
+                        <option value="12">ذو الحجة</option>
                       </select>
-                      <input  class="inputselect2 " type="text"  placeholder="ادخل  السنة ">
+                      <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة "> 
+
                     </div>
                     </td>
-                </tr>
+                </tr> -->
               </table>
               <div class="btn-box">
                 <button class="btn">موافق</button>
@@ -54,7 +56,8 @@
             </form>
           </div>
         </div>
-
+        <h2 *ngIf="isSuccess" class="succss">تمت عملية البيع بنجاج</h2>
+        <h2 class="notsuccss">{{error}} </h2>
       </div>
     </div>
   </section>
