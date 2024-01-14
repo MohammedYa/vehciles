@@ -2,7 +2,7 @@
   <div class="layer">
     <h1>إضافة مركبه / دراجه</h1>
     <div class="container ">
-      <form [formGroup]="addVehcilForm" (ngSubmit)="addVehcilsForm(addVehcilForm)">
+      <form [formGroup]="addVehcilForm" (ngSubmit)="addVehcilsForm(addVehcilForm)" enctype="multipart/form-data">
         <div class="row">
 
           <div class="col-xl-7 ">
@@ -62,13 +62,7 @@
                       <select formControlName="Addedday" class="inputselect ">
                         <option value="اليوم"disabled >اليوم</option>
                         <option *ngFor="let day of dayes" [value]="day">{{day}}</option>
-                        <!-- <option value="السبت">السبت</option>
-                        <option value="الاحد">الاحد</option>
-                        <option value="الاثنين">الاثنين</option>
-                        <option value="الثلاثاء">الثلاثاء</option>
-                        <option value="الاربعاء">الاربعاء</option>
-                        <option value="الخميس">الخميس</option>
-                        <option value="الجمعة">الجمعة</option> -->
+                     
                       </select>
                       <select  formControlName="Addedmonth"class="inputselect2 ">
                         <option value="الشهر" disabled >الشهر</option>

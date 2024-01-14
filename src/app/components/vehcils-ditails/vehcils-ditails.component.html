@@ -9,44 +9,47 @@
                     <tr>
                         <td class="title">رقم اللوحة</td>
                         <td  >
-                            <div class="content"> </div></td>
+                            <div class="content"> {{vehcile.plateNumber}}</div>
+                        </td>
                        </tr>
                     <tr>
                         <td class="title">رقم الهيكل</td>
-                        <div class="content"> </div>
+                        <div class="content">{{vehcile.structureNumber}} </div>
 
                     </tr>
                     <tr>
                         <td class="title">النوع</td>
                         <td  >
-                            <div class="content"> </div>
+                            <div class="content">{{vehcile.vehicleType}} </div>
 
                         </td>
                     </tr>
                     <tr>
-                        <td class="title">الحجم</td>
+                        <td class="title">الموديل</td>
                         <td  >
-                            <div class="content"> </div>
+                            <div class="content"> {{vehcile.module}}</div>
                         </td>
                     </tr>
                     <tr>
                         <td class="title">الجهة المحضرة</td>
                         <td  >
-                            <div class="content"> </div>
+                            <div class="content">{{vehcile.destinationType}} </div>
 
                         </td>
                   </tr>
                     <tr>
                         <td class="title">تاريخ الدخول</td>
                         <td  >
-                            <div class="content"> </div>
+                       
+                       
+                            <div class="content"> {{vehcile.dateInStringFormate}}</div>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="title">ملاحظات</td>
                         <td  >
-                            <div class="content note"> </div>
+                            <div class="content note">{{vehcile.notes}} </div>
 
                         </td>
                     </tr>
@@ -55,16 +58,35 @@
             </div>
             <div class="col-md-6">
                 <div class="img">
-                    <img src="../../../assets/images/car1.jpg" alt="">
+                    <img [src]="vehcile.imageUrl" alt="">
                 </div>
-                <div class="btns">
-                    <input type="button" value="تعديل ">
-                    <input type="button" value="حذف">
+                <div class="btns text-center">
+                    <a [routerLink]="['/edit',vehcile.plateNumber]"><input type="button" value="تعديل "> </a>
+                    <input data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" value="حذف">
                     <input type="button" value="طباعة">
-                    <a routerLink=""><input type="button" value="خروج"></a>
+                    <a routerLink="/Home"><input type="button" value="خروج"></a>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+          <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">اغلاق</button>
+          <button (click)="deleteVehcil(vehcile.id)"type="button" class="btn btn-primary delete">تاكيد الحذف</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>

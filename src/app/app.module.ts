@@ -18,6 +18,7 @@ import { VehcilsOutComponent } from './components/vehcils-out/vehcils-out.compon
 import { VehcilsComponent } from './components/vehcils/vehcils.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ReportsComponent } from './components/reports/reports.component';
     VehcilsOutComponent,
     VehcilsComponent,
     NotfoundComponent,
-    ReportsComponent
+    ReportsComponent,
+    EditvehcilsComponent
   ],
   imports: [
     BrowserModule,

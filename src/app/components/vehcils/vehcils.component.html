@@ -3,14 +3,18 @@
     <h2>المركبات / الدراجات المتوفره</h2>
     <div class="box m-auto">
 
-      <a >
+      <div *ngFor="let vehcil of vehcils">
+         <a [routerLink]="['/VehicleDetails',vehcil.plateNumber]" >
+        
         <div class="img-box">
-          <img class="w-100" src="../../assets/images/image 3.png" alt="">
+          <img class="w-100" [src]="vehcil.imageUrl" alt="">
           <div class="layer2">
             <p>المزيد ...</p>
           </div>
         </div>
       </a>
+      </div>
+     
 
     </div>
   </div>

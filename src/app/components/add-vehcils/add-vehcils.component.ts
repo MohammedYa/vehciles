@@ -8,8 +8,7 @@ import { AddVechilsService } from '../../services/add-vechils.service';
   styleUrls: ['./add-vehcils.component.css']
 })
 export class AddVehcilsComponent implements OnInit {
-  month: any = ["محرم", "صفر", "ربيع الاول", "ربيع الثاني ", "جمادي الاول ", "جمادي الاخرة",
-    "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"]
+  month: any = ["محرم", "صفر", "ربيع الاول", "ربيع الثاني ", "جمادي الاول ", "جمادي الاخرة","رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"]
   dayes: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
   selectedFile!: File;
   Img: any;
@@ -41,21 +40,34 @@ export class AddVehcilsComponent implements OnInit {
   })
 
   addVehcilsForm(form: FormGroup) {
-    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;
+    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;    
     let obj = {
-      PlateNumber: form.value.PlateNumber,
-      StructureNumber: form.value.StructureNumber,
+      plateNumber: form.value.PlateNumber,
+      structureNumber: form.value.StructureNumber,
       Module: form.value.Module,
       Type: form.value.Type,
       Color: form.value.Color,
       VehicleType: Number(form.value.VehicleType),
       DestinationType: Number(form.value.DestinationType),
       Notes: form.value.Notes,
-      Image: this.selectedFile,
-      AddedDate:this.date
+      Image: null,
+      Addedyear:this.date
     }
     console.log(obj);
-    this._AddvehiclsService.addVehcils(obj).subscribe((res) => {
+
+    var formData = new FormData();
+    formData.append("PlateNumber", obj.plateNumber);
+    formData.append("StructureNumber", obj.structureNumber);
+    formData.append("Module", obj.Module);
+    formData.append("Type", obj.Type);
+    formData.append("Color", obj.Color);
+    formData.append("VehicleType", obj.VehicleType.toString());
+    formData.append("DestinationType", obj.DestinationType.toString());
+    formData.append("Notes", obj.Notes);
+    formData.append("AddedDate", this.date);
+    formData.append("Image", this.selectedFile)
+
+    this._AddvehiclsService.addVehcils(formData).subscribe((res) => {
       console.log(res);
       console.log(obj);
     })

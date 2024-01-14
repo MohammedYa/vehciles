@@ -18,7 +18,6 @@ export class LoginComponent {
     sendLoginForm(form:FormGroup){
       this._LoginService.login(form.value).subscribe(
         (res)=>{
-          console.log(res);
           
         if(res.message=="Successfully"){
           localStorage.setItem("userToken",res.data.token)

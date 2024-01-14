@@ -24,7 +24,7 @@ this._LoginService.UserData.subscribe(
       ()=>{
         if(this._LoginService.UserData.getValue()!=null){
           this.isLogin=true 
-            if(this.role=="true"){
+            if(this.role==="true"){
             this.isAdmin=true
             }
             else{
@@ -33,7 +33,7 @@ this._LoginService.UserData.subscribe(
         }
         else{
           this.isLogin=false
-            if(this.role=="true"){
+            if(this.role==="true"){
             this.isAdmin=true
             }
             else{
@@ -41,7 +41,7 @@ this._LoginService.UserData.subscribe(
             }
         }
       }
-    )
+)
     
   }
 }

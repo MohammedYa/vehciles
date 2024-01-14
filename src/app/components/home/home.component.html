@@ -7,7 +7,7 @@
 
             <a routerLink="/addVehicle">إضافة مركبة / دراجة</a>
             <a routerLink="/search">البحث عن مركبة / دراجه</a>
-            <a routerLink="/vehicles"> المركبات </a>
+            <a *ngIf="isAdmin"  routerLink="/vehicles"> المركبات </a>
             <a routerLink="/saleVehicles">بيع مركبة / دراجة</a>
             <a routerLink="">سكراب</a>
             <a routerLink="/vehiclesOut">خروج مركبة / دراجة لسبب أخر</a>
