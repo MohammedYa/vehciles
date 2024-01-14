@@ -1,0 +1,21 @@
+<section>
+    <div class="section">
+      <div class="layer">
+        <h2>البحث عن مركبة / دراجة</h2>
+  
+        <div class="search">
+          <h3>أدخل رقم اللوحة</h3>
+          <form [formGroup]="scrapeForm" >
+            <input formControlName="PlateNumber" type="text">
+          </form>
+  
+          <div class="btns">
+            <input (click)="getVecile(scrapeForm)"   type="button" value="اسكراب">
+            <input (click)="back()" type="button" value="خروج">
+          </div>
+        </div>
+        <h4 class="text-center mt-4 text-success bg-light success">{{massaage}}</h4>
+        <h4 class="text-center mt-4 bg-light faild">{{error}}</h4>
+      </div>
+    </div>
+</section>

@@ -21,6 +21,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 
 import { EditvehcilsComponent } from './components/editvehcils/editvehcils.component';
 import { UsersComponent } from './components/users/users.component';
+import { ScrapComponent } from './components/scrap/scrap.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,9 @@ import { UsersComponent } from './components/users/users.component';
     VehcilsComponent,
     NotfoundComponent,
     ReportsComponent,
-    EditvehcilsComponent
-    UsersComponent
+    EditvehcilsComponent,
+    UsersComponent,
+    ScrapComponent
   ],
   imports: [
     BrowserModule,

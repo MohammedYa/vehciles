@@ -4,15 +4,16 @@
     <div class="box m-auto">
 
       <div *ngFor="let vehcil of vehcils">
-         <a [routerLink]="['/VehicleDetails',vehcil.plateNumber]" >
+     
         
         <div class="img-box">
           <img class="w-100" [src]="vehcil.imageUrl" alt="">
           <div class="layer2">
-            <p>المزيد ...</p>
+           <a [routerLink]="['/VehicleDetails',vehcil.plateNumber]"> <p>المزيد ...</p></a>
           </div>
+          <i *ngIf="vehcil.isDeleted" (click)="revertVehcils(vehcil.id)" class="fa-solid fa-clock-rotate-left revert"></i>
         </div>
-      </a>
+     
       </div>
      
 

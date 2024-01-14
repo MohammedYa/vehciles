@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { VehcilsDitailsService } from '../../services/vehcils-ditails.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeleteVehcilService } from '../../services/delete-vehcil.service';
+declare var $:any
 Router
 @Component({
   selector: 'app-vehcils-ditails',
@@ -13,9 +14,9 @@ export class VehcilsDitailsComponent {
   vehcile:any={}
   errors:string=""
   isValid=true
+  deleteStatus:string=""
 constructor(private _Router:Router, private _GetVehcilService: VehcilsDitailsService  ,private _ActivatedRoute  :ActivatedRoute ,private  _DeleteVehcilService:DeleteVehcilService  ){
  this.Id= _ActivatedRoute.snapshot.params['Id']
- 
  this.getVehcils(this.Id)
 }
 
@@ -37,13 +38,13 @@ constructor(private _Router:Router, private _GetVehcilService: VehcilsDitailsSer
   deleteVehcil(id:number){
    
     this._DeleteVehcilService.deleteVehcil(id).subscribe(
-      (res)=>{
-        if(res.isSuccess){
-          this._Router.navigateByUrl("/Home")
-          }  
-          },
-        
-          )
+    (res)=>{
+    if(res.isSuccess){
+      this.deleteStatus="تم الحذف بنجاح"
+    }  
+    },
+
+    )
 
   }
 }
