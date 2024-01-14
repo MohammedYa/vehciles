@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetAllVehcilsService } from '../../services/get-all-vehcils.service';
+import { RevertVehcilService } from '../../services/revert-vehcil.service';
 
 @Component({
   selector: 'app-vehcils',
@@ -8,7 +9,7 @@ import { GetAllVehcilsService } from '../../services/get-all-vehcils.service';
 })
 export class VehcilsComponent implements OnInit {
 
-  constructor( private _GetAllVehcilsService:GetAllVehcilsService ){
+  constructor( private _GetAllVehcilsService:GetAllVehcilsService,private _RevertVehcilService:RevertVehcilService ){
   this.getAllVehcils()
   }
   ngOnInit(): void {
@@ -25,5 +26,13 @@ export class VehcilsComponent implements OnInit {
 
     })
 
+  }
+revertVehcils(Id:number){
+this._RevertVehcilService.revertVehicles(Id).subscribe(
+  (res)=>{
+  console.log(res);
+    
+  }
+)
   }
 }

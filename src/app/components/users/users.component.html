@@ -2,96 +2,39 @@
   <div class="layer">
     <div class="box">
       <h2>بيانات المستخدمين</h2>
-      <div class="btn-box p-4">
-        <button class="btn">رئيس</button>
-        <button class="btn2">موظف</button>
+      <div class="btn-box ">
+        <button class="btn  ">رئيس</button>
+        <button class="btn">موظف</button>
       </div>
       <div class="usersBox p-3">
 
-        <div class="users p-3">
+        <div *ngFor="let user of users" class="users p-3">
           <div class="user-details">
             <img src="../../../assets/images/image 13 (1).png" alt="">
             <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
+              <div class="info">
+                <p>بيانات المستخدم :  </p>
+                <p><span>{{user.firstName}} {{user.lastName}}</span></p>
+              </div>
+              <div class="info">
+
+                <p>اسم المستخدم : </p>
+                <p> <span>{{user.userName}}</span></p>
+              </div>
+              <div class="info">
+              <p>رقم الهاتف: </p>
+              <p><span>{{user.phoneNumber}}</span></p>
+
+              </div>
               <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
+                <button class="delete" (click)="deleteUser(user.id)">حذف</button>
+                <button *ngIf="!user.isConfirmed" class="confirm" (click)="confirmUser(user.id)">تفعيل</button>
               </div>
             </div>
           </div>
+          <h5 class="mt-2 text-danger">{{err}}</h5>
         </div>
-        <div class="users p-3">
-          <div class="user-details">
-            <img src="../../../assets/images/image 13 (1).png" alt="">
-            <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
-              <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="users p-3">
-          <div class="user-details">
-            <img src="../../../assets/images/image 13 (1).png" alt="">
-            <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
-              <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="users p-3">
-          <div class="user-details">
-            <img src="../../../assets/images/image 13 (1).png" alt="">
-            <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
-              <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="users p-3">
-          <div class="user-details">
-            <img src="../../../assets/images/image 13 (1).png" alt="">
-            <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
-              <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="users p-3">
-          <div class="user-details">
-            <img src="../../../assets/images/image 13 (1).png" alt="">
-            <div class="details">
-              <p>اسم المستخدم <span>(username)</span></p>
-              <p>01000000000</p>
-              <p>***************</p>
-              <div class="detl-btn">
-                <button>حذف</button>
-                <button>تفعيل</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

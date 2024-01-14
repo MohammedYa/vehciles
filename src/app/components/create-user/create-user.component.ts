@@ -42,11 +42,9 @@ export class CreateUserComponent {
     ]
   }
 this._CreateUserService.addUser(obj).subscribe((res)=>{
-  console.log(res);
-  
+this.addUserForm.reset()  
 },
 (err)=>{
-  console.log(err);
   
 })
   }
