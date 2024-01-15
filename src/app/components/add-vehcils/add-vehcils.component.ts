@@ -40,7 +40,7 @@ export class AddVehcilsComponent implements OnInit {
   })
 
   addVehcilsForm(form: FormGroup) {
-    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;    
+    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;
     let obj = {
       plateNumber: form.value.PlateNumber,
       structureNumber: form.value.StructureNumber,
@@ -73,9 +73,23 @@ export class AddVehcilsComponent implements OnInit {
     })
   }
 
-  url: string = '../../../assets/images/add-image 1.png';
+  url: string = "../../../assets/images/upload-photo.jpg";
 
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+  onFileSelected(e:any ) {
+
+    this.selectedFile = e.target.files[0];
+    if(e.target.files){
+      console.log(e.target.files);
+      var reader=new FileReader()
+      reader.readAsDataURL(e.target.files[0])
+      reader.onload=(Event:any)=>{
+        this.url=Event.target.result
+        console.log(this.url);
+        
+      }
+ }
+
+
+
   }
 }
