@@ -9,6 +9,7 @@ body{
     padding: 0%;
     /* background-color: black; */
     direction:rtl;
+    font-family: cairo;
 }
 
 html, body { height: 100%; }

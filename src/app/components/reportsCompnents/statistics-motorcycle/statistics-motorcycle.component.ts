@@ -3,6 +3,7 @@ import { ReportsService } from '../../../services/reports.service';
 import * as XLSX from 'xlsx';
 import html2canvas from 'html2canvas';
 import jspdf from 'jspdf';
+import { MatTableDataSource } from '@angular/material/table';
 @ViewChild('table', { read: ElementRef })
 
 @Component({
@@ -11,18 +12,19 @@ import jspdf from 'jspdf';
   styleUrl: './statistics-motorcycle.component.css'
 })
 export class StatisticsMotorcycleComponent  implements OnInit{
-  StatisticsMotorcycle:any=[] 
   table!: ElementRef;
-
+  displayedColumns: string[] = ['type','color', 'module','plateNumber','structureNumber','destinationType',"scrapDate"];
+  dataSource: any;
   constructor(private _ReportsService:ReportsService){}
+ 
   ngOnInit(): void {
       this.getStatisticsMotorcycle()
 
   }
 getStatisticsMotorcycle(){
   this._ReportsService.getStatisticsMotorcycle().subscribe((res)=>{
-    console.log(res);
-    this.StatisticsMotorcycle=res
+    this.dataSource = new MatTableDataSource<any>(res);
+       console.log(this.dataSource._data.value);
  
   })
 }
