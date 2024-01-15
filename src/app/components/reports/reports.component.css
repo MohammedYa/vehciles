@@ -1,0 +1,90 @@
+.title{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+.data{
+text-align: center;
+font-size: 20px;
+font-size: 400;
+color: #65145D;
+
+}
+.section {
+    height: 100vh;
+    background-image: url("../../../assets/images/section1.png");
+    background-size: cover;
+    background-position: center center;
+    inset: 0;
+    position: relative;
+  }
+  .layer {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(5, 24, 33, 0.56);
+  }
+  .container,
+  .text,
+  .col-xl-6,
+  .row,
+  .formcontainer {
+    height: 100%;
+  }
+  .pages {
+    padding-top: 30px;
+    text-align: center;
+    width: 50%;
+    margin: 0px auto;
+    background-color: rgba(101, 20, 93, 0.55);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .pages a {
+    display: block;
+    text-decoration: none;
+    font-family: Cairo;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: center;
+    box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
+    background-color: #fff;
+    color: rgba(101, 20, 93, 1);
+    width: 446px;
+    height: 56px;
+    border-radius: 19px;
+  }
+  .back {
+    width: 213px !important;
+    margin: auto;
+  }
+  
+  @media screen and (min-width:992px)and (max-width:1200px) {
+    
+  }
+  @media screen and (min-width:768px)and (max-width:992px) {
+  .pages{
+    width: 72%;
+  }
+  }
+  @media screen and (min-width:500px)and (max-width:768px) {
+    .pages{
+      width: 100%;
+    }
+  }
+  @media screen and (min-width:360px)and (max-width:500px) {
+  .pages a{
+    width: 327px;
+    margin-bottom: 10px;
+  }
+  .pages{
+    width: 100%;
+  }
+  .section{
+    height: 120vh;
+  }
+  }
+  
+  

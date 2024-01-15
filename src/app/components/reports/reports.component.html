@@ -1,33 +1,68 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<!-- <button class="btn btn-primary m-3 " (click)="exportAsExel()">DownLoad Exel File</button>
+<button class="btn btn-primary m-3 " (click)="exportToPdf()">DownLoad PDF File</button>
+<table #table id="table" mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+  <!-- <ng-container matColumnDef="destinationType">
+    <th mat-header-cell *matHeaderCellDef class="title"> الرقم الكودي  </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.destinationType}} </td>
+  </ng-container> -->
 
   <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+  <!-- <ng-container matColumnDef="plateNumber" >
+    <th mat-header-cell *matHeaderCellDef  class="title"> رقم اللوحة </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.plateNumber}} </td>
+  </ng-container> -->
 
   <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
+  <!-- <ng-container matColumnDef="structureNumber">
+    <th mat-header-cell *matHeaderCellDef  class="title"> رقم الهيكل	 </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.structureNumber}} </td>
+  </ng-container> -->
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
+  <!-- <ng-container matColumnDef="module">
+    <th mat-header-cell *matHeaderCellDef  class="title"> الموديل </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.module}} </td>
+  </ng-container> -->
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <!-- Symbol Column -->
+  <!-- <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef  class="title"> النوع </th>
+    <td mat-cell *matCellDef="let element" class="data"> {{element.type}} </td>
+  </ng-container> -->
+
+ <!--Symbol Column-->   
+   <!-- <ng-container matColumnDef="color">
+   <th mat-header-cell *matHeaderCellDef  class="title">  اللون </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.color}} </td>
+  </ng-container> -->
+
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+</table> -->
+<section>
+  <div class="section">
+    <div class="layer">
+      <div class="container">
+        <div class="row">
+         <div class="pages">
 
+          <a routerLink="/reportsOfStatisticsBigCar">احصائيات السيارات الكبيرة</a>
+          <a routerLink="/reportsOfStatisticsSmallCar">احصائيات السيارات الصغيرة</a>
+          <a routerLink="/reportsOfStatisticsMotorcycle">احصائيات الدراجات </a>
+          <a routerLink="/reportsOfGeneralStatisticsVihcls"> احصائيات المركبات  بشكل عام </a>
+          <a routerLink="/reportsOfGeneralStatisticsMotorcycle"> احصائيات الدرجات  بشكل عام </a>
+          <a routerLink="/reportsOfSellSmallCar">احصائيات السيارات الصغيرة المباعة  </a>
+          <a routerLink="/reportsOfSellBigCar">احصائيات السيارات الكبيرة المباعة  </a>
+         
+          <a class="back" routerLink="/Home">خروج</a>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

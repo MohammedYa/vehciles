@@ -17,6 +17,13 @@ import { ScrapComponent } from './components/scrap/scrap.component';
 import { AuthGuard } from './gards/auth.guard';
 import { IsAdminGuard } from './gards/is-admin.guard';
 import { ReportsComponent } from './components/reports/reports.component';
+import { GeneralStatisticsMotorcycleComponent } from './components/reportsCompnents/general-statistics-motorcycle/general-statistics-motorcycle.component';
+import { GeneralStatisticsVihclesComponent } from './components/reportsCompnents/general-statistics-vihcles/general-statistics-vihcles.component';
+import { SellBigCarsComponent } from './components/reportsCompnents/sell-big-cars/sell-big-cars.component';
+import { SellSmallCarsComponent } from './components/reportsCompnents/sell-small-cars/sell-small-cars.component';
+import { StatisticsMotorcycleComponent } from './components/reportsCompnents/statistics-motorcycle/statistics-motorcycle.component';
+import { StatisticsBigCarsComponent } from './components/reportsCompnents/statistics-big-cars/statistics-big-cars.component';
+import { StatisticsSmallCarsComponent } from './components/reportsCompnents/statistics-small-cars/statistics-small-cars.component';
 
 
 const routes: Routes = [
@@ -35,7 +42,18 @@ const routes: Routes = [
   {path:'edit/:Id',canActivate:[AuthGuard],component:EditvehcilsComponent},
   {path:'scrapeVehicle',canActivate:[AuthGuard],component:ScrapComponent},
   {path:'reports',canActivate:[AuthGuard],component:ReportsComponent},
+  //reports components 
+  {path:'reportsOfGeneralStatisticsMotorcycle',canActivate:[AuthGuard],component:GeneralStatisticsMotorcycleComponent},
+  {path:'reportsOfGeneralStatisticsVihcls',canActivate:[AuthGuard],component:GeneralStatisticsVihclesComponent},
+  {path:'reportsOfSellBigCar',canActivate:[AuthGuard],component:SellBigCarsComponent},
+  {path:'reportsOfSellSmallCar',canActivate:[AuthGuard],component:SellSmallCarsComponent},
+  {path:'reportsOfStatisticsMotorcycle',canActivate:[AuthGuard],component:StatisticsMotorcycleComponent},
+  {path:'reportsOfStatisticsBigCar',canActivate:[AuthGuard],component:StatisticsBigCarsComponent},
+  {path:'reportsOfStatisticsSmallCar',canActivate:[AuthGuard],component:StatisticsSmallCarsComponent},
+ 
   {path:'notFound',component:NotfoundComponent},
+
+
   {path:'**',component:NotfoundComponent},
 
   ];
