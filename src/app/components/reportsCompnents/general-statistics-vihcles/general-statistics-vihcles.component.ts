@@ -3,6 +3,7 @@ import { ReportsService } from '../../../services/reports.service';
 import * as XLSX from 'xlsx';
 import html2canvas from 'html2canvas';
 import jspdf from 'jspdf';
+import { MatTableDataSource } from '@angular/material/table';
 @ViewChild('table', { read: ElementRef })
 
 @Component({
@@ -11,17 +12,18 @@ import jspdf from 'jspdf';
   styleUrl: './general-statistics-vihcles.component.css'
 })
 export class GeneralStatisticsVihclesComponent {
- GeneralStatisticsVihcles:any=[] 
- table!: ElementRef;
-
+  table!: ElementRef;//,"buyingDestination" ,'buyerIdentity',"dateOfSell","value"
+  displayedColumns: string[] = ["vehicleType",'type','color', 'module','plateNumber','structureNumber','destinationType',"scrapDate","outCount"];
+  dataSource: any;
   constructor(private _ReportsService:ReportsService){}
+ 
   ngOnInit(): void {
     this.getGeneralStatisticsVihcles()
   }
   getGeneralStatisticsVihcles(){
   this._ReportsService.getGeneralStatisticsVihcles().subscribe((res)=>{
-    console.log(res);
-    this.GeneralStatisticsVihcles=res
+    this.dataSource = new MatTableDataSource<any>(res);
+
 
   })
 }

@@ -3,6 +3,7 @@ import { ReportsService } from '../../../services/reports.service';
 import * as XLSX from 'xlsx';
 import html2canvas from 'html2canvas';
 import jspdf from 'jspdf';
+import { MatTableDataSource } from '@angular/material/table';
 @ViewChild('table', { read: ElementRef })
 
 @Component({
@@ -11,8 +12,9 @@ import jspdf from 'jspdf';
   styleUrl: './sell-big-cars.component.css'
 })
 export class SellBigCarsComponent {
- SellBigCars:any=[] 
- table!: ElementRef;
+  table!: ElementRef;
+  dataSource: any;
+  displayedColumns: string[] = ["vehicleType",'type','color', 'module','plateNumber','structureNumber','destinationType',"buyingDestination" ,'buyerIdentity',"dateOfSell","value"];
 
   constructor(private _ReportsService:ReportsService){}
   ngOnInit(): void {
@@ -20,9 +22,8 @@ export class SellBigCarsComponent {
   }
   getSellBigCars(){
   this._ReportsService.getSellBigCars().subscribe((res)=>{
-    console.log(res);
-    this.SellBigCars=res
- 
+    this.dataSource = new MatTableDataSource<any>(res);
+
   })
 }
 

@@ -1,1 +1,72 @@
-<p>sell-big-cars works!</p>
+<h2>احصائيات بمبيعات المركبات الكبيرة </h2>
+
+<button class="btn btn-primary m-3 " (click)="exportAsExel()">DownLoad Exel File</button>
+<!-- <button class="btn btn-primary m-3 " (click)="exportToPdf()">DownLoad PDF File</button> -->
+<button routerLink="/reports" class="btn1 btn  btn-primary m-3 ">رجوع</button>
+
+
+
+<table #table id="table" mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
+
+ 
+  <ng-container matColumnDef="destinationType">
+    <th mat-header-cell *matHeaderCellDef class="title"> جهة الاحضار  </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.destinationType}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="plateNumber" >
+    <th mat-header-cell *matHeaderCellDef  class="title"> رقم اللوحة </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.plateNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="structureNumber">
+    <th mat-header-cell *matHeaderCellDef  class="title"> رقم الهيكل	 </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.structureNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="module">
+    <th mat-header-cell *matHeaderCellDef  class="title"> الموديل </th>
+    <td mat-cell *matCellDef="let element"class="data"> {{element.module}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef  class="title"> النوع </th>
+    <td mat-cell *matCellDef="let element" class="data"> {{element.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef  class="title">  اللون </th>
+     <td mat-cell *matCellDef="let element"class="data"> {{element.color}} </td>
+   </ng-container>
+   
+   <ng-container matColumnDef="dateOfSell">
+    <th mat-header-cell *matHeaderCellDef  class="title">  تاريخ البيع </th>
+     <td mat-cell *matCellDef="let element"class="data"> {{element.dateOfSell}} </td>
+   </ng-container>
+  <ng-container matColumnDef="vehicleType">
+   <th mat-header-cell *matHeaderCellDef  class="title">   نوع المركبة </th>
+    <td  mat-cell *matCellDef="let element" class="data"> {{element.vehicleType}} 
+       
+   </td>
+  
+  </ng-container>
+   <ng-container matColumnDef="buyingDestination">
+    <th mat-header-cell *matHeaderCellDef  class="title">جهة الشراء </th>
+     <td  mat-cell *matCellDef="let element" class="data"> {{element.buyingDestination}} 
+        
+    </td>
+   </ng-container>
+ 
+ <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef  class="title">  قيمة الشراء  </th>
+     <td mat-cell *matCellDef="let element"class="data"> {{element.value}} </td>
+   </ng-container> 
+   <ng-container matColumnDef="buyerIdentity">
+    <th mat-header-cell *matHeaderCellDef  class="title">   هوية المشتري  </th>
+     <td mat-cell *matCellDef="let element"class="data"> {{element.buyerIdentity}} </td>
+   </ng-container> 
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+

@@ -4,8 +4,7 @@ import * as XLSX from 'xlsx';
 import html2canvas from 'html2canvas';
 import jspdf from 'jspdf';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+
 @ViewChild('table', { read: ElementRef })
 
 @Component({
@@ -14,18 +13,20 @@ import { MatSort } from '@angular/material/sort';
   styleUrl: './statistics-big-cars.component.css'
 })
 export class StatisticsBigCarsComponent implements OnInit{
+[x: string]: any;
   StatisticsBigCars:any=[] 
   table!: ElementRef;
+  
+  displayedColumns: string[] = ['type','color', 'module','plateNumber','structureNumber','destinationType',"scrapDate","vehicleType","buyingDestination" ,'buyerIdentity',"dateOfSell","value"];
+  dataSource: any;
 
   constructor(private _ReportsService:ReportsService){}
   ngOnInit(): void {
     this.getStatisticsBigCars()
   }
   getStatisticsBigCars(){
-    this._ReportsService.getStatisticsBigCars().subscribe((res)=>{
-      this.StatisticsBigCars=res
-      //  this.dataSource = new MatTableDataSource<any>(res);
-      //  console.log(this.dataSource._data.value);
+    this._ReportsService.getStatisticsBigCars().subscribe((res)=>{   
+       this.dataSource = new MatTableDataSource<any>(res);
   
     })
   }
@@ -33,7 +34,7 @@ export class StatisticsBigCarsComponent implements OnInit{
 
 
 
-  fileName:string="تقرير عن احصائيات السيارات الكبيرة"
+fileName:string="تقرير عن احصائيات السيارات الكبيرة"
 exportAsExel(){
 // get table 
 let data=document.getElementById("table") 
@@ -46,7 +47,6 @@ XLSX.utils.book_append_sheet(wb,ws,'sheet1')
 //save to file 
 XLSX.writeFile(wb,'Data.xlsx')
 }
-
 exportToPdf() {
   const pdfData = document.getElementById('table');
 

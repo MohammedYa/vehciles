@@ -75,7 +75,9 @@ export class AddVehcilsComponent implements OnInit {
 
   url: string = '../../../assets/images/add-image 1.png';
 
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+  onFileSelected(e: any) {
+    this.selectedFile = e.target.files[0];
+
+
   }
 }

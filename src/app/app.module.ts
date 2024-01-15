@@ -32,7 +32,8 @@ import { GeneralStatisticsVihclesComponent } from './components/reportsCompnents
 import { SellSmallCarsComponent } from './components/reportsCompnents/sell-small-cars/sell-small-cars.component';
 import { SellBigCarsComponent } from './components/reportsCompnents/sell-big-cars/sell-big-cars.component';
 import { StatisticsMotorcycleComponent } from './components/reportsCompnents/statistics-motorcycle/statistics-motorcycle.component';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
@@ -72,8 +73,9 @@ import { MatSortModule } from '@angular/material/sort';
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
-
+    MatSortModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
