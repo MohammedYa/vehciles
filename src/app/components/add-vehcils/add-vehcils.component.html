@@ -62,7 +62,7 @@
                       <select formControlName="Addedday" class="inputselect ">
                         <option value="اليوم"disabled >اليوم</option>
                         <option *ngFor="let day of dayes" [value]="day">{{day}}</option>
-                     
+
                       </select>
                       <select  formControlName="Addedmonth"class="inputselect2 ">
                         <option value="الشهر" disabled >الشهر</option>
@@ -79,7 +79,7 @@
                         <option value="11">ذو القعده</option>
                         <option value="12">ذو الحجة</option>
                       </select>
-                      <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة "> 
+                      <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة ">
 
                     </div>
                   </td>
@@ -161,11 +161,11 @@
 
               <div class="addImg">
                 <label for="addPhoto">
-                  <img [src]="url" alt="">
-                  <p>حمل الصورة</p>
+                  <img  [src]="url" alt="">
+
                 </label>
               </div>
-              
+
               <input class="d-none" id="addPhoto" type="file" (change)="onFileSelected($event)">
             </div>
             <h4 *ngIf="er" class="err text-white">*{{error}}</h4>
