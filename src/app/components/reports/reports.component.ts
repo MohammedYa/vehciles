@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import * as XLSX from 'xlsx';
 import { ExportPdfService } from '../../services/export-pdf.service';
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 import jspdf from 'jspdf';
 export interface carBig {
   color: string;
@@ -30,34 +29,24 @@ export interface carBig {
 
 export class ReportsComponent implements OnInit {
   table!: ElementRef;
+  isAdmin: boolean = false;
 
   displayedColumns: string[] = ['color', 'destinationType', 'module',  'plateNumber', 'type', 'structureNumber'];
   dataSource: any;
 
-  StatisticsBigCars:any=[] 
-  // StatisticsSmallCars:any=[]
-  // StatisticsMotorcycle:any=[] 
-  // GeneralStatisticsMotorcycle:any=[]
-  // GeneralStatisticsVihcles:any=[] 
-  // SellSmallCars:any=[]
-  // SellBigCars:any=[] 
   // SellCarsInPeriod:any=[]
   // SellMotorcycleInPeriod:any=[] 
   // StatisticsSmallCarsInDate:any=[]
   formDate:string=''
 constructor(private _ReportsService:ReportsService,private pdfExportService:ExportPdfService ){
-  // this.getStatisticsBigCars()
-  // this.getStatisticsSmallCars()
-  // this.getStatisticsMotorcycle()
-  // this.getGeneralStatisticsMotorcycle()
-  // this.getGeneralStatisticsMotorcycle()
-  // this.getGeneralStatisticsVihcles()
-  // this.getSellSmallCars()
-  // this.getSellBigCars()
   // this.getSellCarsInPeriod(this.formDate)
   // this.getSellMotorcycleInPeriod(this.formDate)
   // this.getStatisticsSmallCarsInDate(this.formDate)
-
+  if (localStorage.getItem("isAdmin") === "true") {
+    this.isAdmin = true;
+  } else {
+    this.isAdmin = false;
+  }
 }
 ngOnInit(): void {
   this.getStatisticsBigCars()
@@ -66,54 +55,17 @@ ngOnInit(): void {
 
 getStatisticsBigCars(){
   this._ReportsService.getStatisticsBigCars().subscribe((res)=>{
-    this.StatisticsBigCars=res
+    // this.StatisticsBigCars=res
      this.dataSource = new MatTableDataSource<any>(res);
      console.log(this.dataSource._data.value);
 
   })
 }
-// getStatisticsSmallCars(){
-//   this._ReportsService.getStatisticsSmallCars().subscribe((res)=>{
-//     console.log(res);
-//     this.StatisticsSmallCars=res
 
-//   })
-// }
-// getStatisticsMotorcycle(){
-//   this._ReportsService.getStatisticsMotorcycle().subscribe((res)=>{
-//     console.log(res);
-//     this.StatisticsMotorcycle=res
- 
-//   })
-// }
-// getGeneralStatisticsMotorcycle(){
-//   this._ReportsService.getGeneralStatisticsMotorcycle().subscribe((res)=>{
-//     console.log(res);
-//     this.GeneralStatisticsMotorcycle=res
- 
-//   })
-// }
-// getGeneralStatisticsVihcles(){
-//   this._ReportsService.getGeneralStatisticsVihcles().subscribe((res)=>{
-//     console.log(res);
-//     this.GeneralStatisticsVihcles=res
 
-//   })
-// }
-// getSellSmallCars(){
-//   this._ReportsService.getSellSmallCars().subscribe((res)=>{
-//     console.log(res);
-//     this.SellSmallCars=res
-  
-//   })
-// }
-// getSellBigCars(){
-//   this._ReportsService.getSellBigCars().subscribe((res)=>{
-//     console.log(res);
-//     this.SellBigCars=res
- 
-//   })
-// }
+
+
+
 // getSellCarsInPeriod(DateFrom:string){
 //   this._ReportsService.getSellCarsInPeriod(DateFrom).subscribe((res)=>{
 //     console.log(res);
@@ -164,11 +116,20 @@ exportToPdf() {
   html2canvas(pdfData!).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jspdf('p', 'mm', 'a4');
-    const imgWidth = 210;
+
+    // Add a font that supports Arabic (make sure to provide the correct path to the font file)
+    pdf.addFileToVFS('arabic-font.ttf', 'path/to/arabic-font.ttf');
+    pdf.addFont('arabic-font.ttf', 'ArabicFont', 'Rubik');
+
+    // Set the font for the PDF content
+    pdf.setFont('ArabicFont');
+
+    const imgWidth = 200;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
     pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
     pdf.save('table-export.pdf');
-  });
+});
+
 }
 }

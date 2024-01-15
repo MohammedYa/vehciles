@@ -23,8 +23,17 @@ import { EditvehcilsComponent } from './components/editvehcils/editvehcils.compo
 import { UsersComponent } from './components/users/users.component';
 import { ScrapComponent } from './components/scrap/scrap.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule} from '@angular/material/table';
+import { StatisticsBigCarsComponent } from './components/reportsCompnents/statistics-big-cars/statistics-big-cars.component';
+import { StatisticsSmallCarsComponent } from './components/reportsCompnents/statistics-small-cars/statistics-small-cars.component';
+import { GeneralStatisticsMotorcycleComponent } from './components/reportsCompnents/general-statistics-motorcycle/general-statistics-motorcycle.component';
+import { GeneralStatisticsVihclesComponent } from './components/reportsCompnents/general-statistics-vihcles/general-statistics-vihcles.component';
+import { SellSmallCarsComponent } from './components/reportsCompnents/sell-small-cars/sell-small-cars.component';
+import { SellBigCarsComponent } from './components/reportsCompnents/sell-big-cars/sell-big-cars.component';
+import { StatisticsMotorcycleComponent } from './components/reportsCompnents/statistics-motorcycle/statistics-motorcycle.component';
+
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -45,6 +54,13 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     EditvehcilsComponent,
     UsersComponent,
     ScrapComponent,
+    StatisticsBigCarsComponent,
+    StatisticsSmallCarsComponent,
+    GeneralStatisticsMotorcycleComponent,
+    GeneralStatisticsVihclesComponent,
+    SellSmallCarsComponent,
+    SellBigCarsComponent,
+    StatisticsMotorcycleComponent,
    
   ],
   imports: [
@@ -55,7 +71,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     HttpClientModule, 
     BrowserAnimationsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
 
   ],
   providers: [],
