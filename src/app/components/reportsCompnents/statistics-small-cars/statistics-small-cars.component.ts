@@ -22,10 +22,8 @@ export class StatisticsSmallCarsComponent {
   }
   getStatisticsSmallCars(){
   this._ReportsService.getStatisticsSmallCars().subscribe((res)=>{
-  console.log(res);
   
     this.dataSource = new MatTableDataSource<any>(res);
-   console.log(this.dataSource._data._value);
 
 
   })

@@ -24,7 +24,6 @@ export class StatisticsMotorcycleComponent  implements OnInit{
 getStatisticsMotorcycle(){
   this._ReportsService.getStatisticsMotorcycle().subscribe((res)=>{
     this.dataSource = new MatTableDataSource<any>(res);
-       console.log(this.dataSource._data.value);
  
   })
 }

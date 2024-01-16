@@ -2,9 +2,9 @@
     <div class="main">
       <div class="layer">
         <div class="cartona">
-          <h2>بيع مركبة / دراجة</h2>
+          <h2>اخراج مركبة / دراجة</h2>
           <div class="form-box">
-            <form [formGroup]="getOutForm" (ngSubmit)="saleForm(getOutForm)">
+            <form [formGroup]="getOutForm" >
               <table>
                 <tr>
                   <td><label class="lab" for=""> رقم اللوحة</label></td>
@@ -18,40 +18,11 @@
                   <td><label class="lab " for=""> سبب الأخراج</label></td>
                   <td><input formControlName="caseOfOut" class="inp " type="text" name="" id=""></td>
                 </tr>
-                <!-- <tr>
-                  <td><label class="lab" for="">  التاريخ</label></td>
-                  <td>
-                    <div >
-                      <select formControlName="Addedday" class="inputselect ">
-                        <option value="اليوم"disabled >اليوم</option>
-                        <option *ngFor="let day of dayes" [value]="day">{{day}}</option>
-                     
-                      </select>
-                      <select  formControlName="Addedmonth"class="inputselect2 ">
-                        <option value="الشهر" disabled >الشهر</option>
-                        <option value="01">محرم</option>
-                        <option value="02">صفر</option>
-                        <option value="03">ربيع الاول </option>
-                        <option value="04">ربيع الثاني </option>
-                        <option value="05">جمادي الاول </option>
-                        <option value="06">جمادي الاخرة</option>
-                        <option value="07">رجب</option>
-                        <option value="08">شعبان</option>
-                        <option value="09">رمضان</option>
-                        <option value="10">شوال</option>
-                        <option value="11">ذو القعده</option>
-                        <option value="12">ذو الحجة</option>
-                      </select>
-                      <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة "> 
-
-                    </div>
-                    </td>
-                </tr> -->
               </table>
               <div class="btn-box">
-                <button class="btn">موافق</button>
-                <button class="btn"> طباعة تقرير</button>
-                <button class="btn">خروج</button>
+                <button (click)="saleForm(getOutForm)" class="btn">موافق</button>
+                <button [disabled]="!isSuccess"data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn"> طباعة تقرير</button>
+                <a routerLink="/Home" class="btn">خروج</a>
               </div>
             </form>
           </div>
@@ -61,3 +32,56 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div id="printSection" class="rest">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">ادراة حجز المركبات </h1>
+      </div>
+      <div class="modal-body">
+        <h3 class="recipt"> فاتورة اخراج مركبة</h3>
+        <div class="content">
+         <table class="tab">
+          <tr class="palte">
+            <td> <h2> رقم اللوحة : </h2></td>
+            <td><h4 class="info">{{resipt.PlateNumber}}</h4></td>
+          </tr>
+
+           
+
+           <tr class="palte">
+           <td> <h2>جهة الاخراج : </h2> </td>
+            <td><h4 class="info">{{resipt.outDestination}}</h4></td>
+           </tr>
+           
+           <tr class="palte">
+            <td><h2> سبب الاخراج : </h2></td>
+            <td><h4 class="info">{{resipt.caseOfOut}}</h4></td>
+           </tr>
+           
+            <tr class="palte">
+            <td><h2> التوقيت :   </h2></td>
+            <td><h4 class="info">{{resipt.date}}</h4></td>
+            </tr>
+         </table>
+          
+          
+        </div>
+      </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary colse" data-bs-dismiss="modal">اغلاق</button>
+        <button id="printbtn"printSectionId="printSection" ngxPrint type="button" class="btn btn-primary">طباعة</button>
+      </div>
+    </div>
+  </div>
+</div>

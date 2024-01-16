@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SaleVehcilsService } from '../../services/sale-vehcils.service';
-import { VehcilsDitailsService } from '../../services/vehcils-ditails.service';
+import {NgxPrintModule} from 'ngx-print';
 import { SearchService } from '../../services/search.service';
 @Component({
   selector: 'app-sale-vehcils',
@@ -10,7 +10,7 @@ import { SearchService } from '../../services/search.service';
   styleUrl: './sale-vehcils.component.css',
 })
 export class SaleVehcilsComponent implements OnInit {
-
+   resipt:any={}
   isSuccess:boolean=false
   error:string=""
   Id:number= 0 ;
@@ -32,7 +32,13 @@ export class SaleVehcilsComponent implements OnInit {
 
 
 saleForm(form:FormGroup){
-  
+ this.resipt={
+  buyingDestination:form.value.buyingDestination,
+  buyerIdentity:form.value.buyerIdentity,
+  value:form.value.value,
+  PlateNumber:form.value.PlateNumber
+
+  }
 this._SearchService.getVehcilSearch(form.value.PlateNumber).subscribe((res)=>{
  this.vehicleId=res.id
   let obj={
