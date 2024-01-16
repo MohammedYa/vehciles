@@ -115,6 +115,15 @@ width: 120px;
 .car-img {
   width: 100%;
 }
+.succ{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  font-style: normal;
+  font-family: cairo;
+  margin-top: 20px;
+  color: rgb(28, 251, 28);
+}
 @media screen and (min-width:992px ) and (max-width: 1200px) {
 .btn {
   width: 150px;

@@ -17,7 +17,8 @@ export class AddVehcilsComponent implements OnInit {
   er: boolean = false;
   date: string = ""
   AddedDate: Date;
-
+  url: string = "../../../assets/images/upload-photo.jpg";
+  succ:boolean=false
   constructor(private _AddvehiclsService: AddVechilsService,private _Router:Router) {
     this.AddedDate = new Date(this.date);
   }
@@ -36,16 +37,18 @@ export class AddVehcilsComponent implements OnInit {
     'Addedmonth': new FormControl("الشهر", [Validators.required]),
     'VehicleType': new FormControl(null, [Validators.required]),
     'DestinationType': new FormControl(null, [Validators.required]),
-    'Notes': new FormControl(null, [Validators.required]),
-    'Image': new FormControl(null, [Validators.required])
+    'Notes': new FormControl(null),
+    'Image': new FormControl(null)
   })
 
   addVehcilsForm(form: FormGroup) {
+   
+    
     this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;
 
     var formData = new FormData();
-    formData.append("PlateNumber", form.value.plateNumber);
-    formData.append("StructureNumber", form.value.structureNumber);
+    formData.append("PlateNumber", form.value.PlateNumber);
+    formData.append("StructureNumber", form.value.StructureNumber);
     formData.append("Module", form.value.Module);
     formData.append("Type", form.value.Type);
     formData.append("Color", form.value.Color);
@@ -56,17 +59,23 @@ export class AddVehcilsComponent implements OnInit {
     formData.append("Image", this.selectedFile)
 
     this._AddvehiclsService.addVehcils(formData).subscribe((res) => {
-      console.log(res);
 
     if(res.isSuccess){
        this.addVehcilForm.reset()
       this.url="../../../assets/images/upload-photo.jpg"
+      setTimeout(() => {
+        this.succ = true
+
+      }, 2000);
+      setTimeout(() => {
+        this.succ = false
+
+      }, 4000);
     }
 
     })
   }
 
-  url: string = "../../../assets/images/upload-photo.jpg";
 
   onFileSelected(e:any ) {
 
