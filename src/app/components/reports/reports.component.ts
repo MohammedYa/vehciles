@@ -1,135 +1,19 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ReportsService } from '../../services/reports.service';
-import { MatTableDataSource } from '@angular/material/table';
-import * as XLSX from 'xlsx';
-import { ExportPdfService } from '../../services/export-pdf.service';
-import html2canvas from 'html2canvas';
-import jspdf from 'jspdf';
-export interface carBig {
-  color: string;
-  destinationType: string;
-  module: string;
-  outCount: number;
-  plateNumber:string;
-  scrapDate:string;
-  structureNumber:string;
-  type:string;
-  vehicleType:string;
-
-}
-
-@ViewChild('table', { read: ElementRef })
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
   styleUrl: './reports.component.css'
 })
-
-
 export class ReportsComponent implements OnInit {
-  table!: ElementRef;
-  isAdmin: boolean = false;
+isAdmin: boolean = false;
+constructor( ){
 
-  displayedColumns: string[] = ['color', 'destinationType', 'module',  'plateNumber', 'type', 'structureNumber'];
-  dataSource: any;
-
-  // SellCarsInPeriod:any=[]
-  // SellMotorcycleInPeriod:any=[] 
-  // StatisticsSmallCarsInDate:any=[]
-  formDate:string=''
-constructor(private _ReportsService:ReportsService,private pdfExportService:ExportPdfService ){
-  // this.getSellCarsInPeriod(this.formDate)
-  // this.getSellMotorcycleInPeriod(this.formDate)
-  // this.getStatisticsSmallCarsInDate(this.formDate)
-  if (localStorage.getItem("isAdmin") === "true") {
-    this.isAdmin = true;
-  } else {
-    this.isAdmin = false;
-  }
-}
-ngOnInit(): void {
-  this.getStatisticsBigCars()
-  
-}
-
-getStatisticsBigCars(){
-  this._ReportsService.getStatisticsBigCars().subscribe((res)=>{
-    // this.StatisticsBigCars=res
-     this.dataSource = new MatTableDataSource<any>(res);
-     console.log(this.dataSource._data.value);
-
-  })
-}
-
-
-
-
-
-// getSellCarsInPeriod(DateFrom:string){
-//   this._ReportsService.getSellCarsInPeriod(DateFrom).subscribe((res)=>{
-//     console.log(res);
-//     this.SellCarsInPeriod=res
-
-//   })
-// }
-// getSellMotorcycleInPeriod(DateFrom:string){
-//   this._ReportsService.getSellMotorcycleInPeriod(DateFrom).subscribe((res)=>{
-//     console.log(res);
-//     this.SellMotorcycleInPeriod=res
-
-//   })
-// }
-// getStatisticsSmallCarsInDate(DateFrom:string){
-//   this._ReportsService.getStatisticsSmallCarsInDate(DateFrom).subscribe((res)=>{
-//     console.log(res);
-//     this.StatisticsSmallCarsInDate=res
-//   })
-// }
-
-
-
-
-
-
-
-
-
-//defult  name of  file 
-fileName:string="تقرير عن احصائيات السيارات الكبيرة"
-exportAsExel(){
-// get table 
-let data=document.getElementById("table") 
-const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(data)
-
-//generate work book and add the worksheet
-const wb:XLSX.WorkBook=XLSX.utils.book_new();
-XLSX.utils.book_append_sheet(wb,ws,'sheet1')
-
-//save to file 
-XLSX.writeFile(wb,'Data.xlsx')
-}
-
-exportToPdf() {
-  const pdfData = document.getElementById('table');
-
-  html2canvas(pdfData!).then((canvas) => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jspdf('p', 'mm', 'a4');
-
-    // Add a font that supports Arabic (make sure to provide the correct path to the font file)
-    pdf.addFileToVFS('arabic-font.ttf', 'path/to/arabic-font.ttf');
-    pdf.addFont('arabic-font.ttf', 'ArabicFont', 'Rubik');
-
-    // Set the font for the PDF content
-    pdf.setFont('ArabicFont');
-
-    const imgWidth = 200;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-    pdf.save('table-export.pdf');
-});
-
+if (localStorage.getItem("isAdmin") === "true") {
+this.isAdmin = true;
+} else {
+this.isAdmin = false;
 }
 }
+ngOnInit(): void {}
+}
+

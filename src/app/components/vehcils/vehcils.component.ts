@@ -42,9 +42,8 @@ export class VehcilsComponent implements OnInit {
 revertVehcils(Id:number){
 this._RevertVehcilService.revertVehicles(Id).subscribe(
   (res)=>{
-  console.log(res);
     
   }
 )
-  }
+}
 }

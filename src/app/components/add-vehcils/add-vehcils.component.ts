@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AddVechilsService } from '../../services/add-vechils.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-vehcils',
@@ -17,7 +18,7 @@ export class AddVehcilsComponent implements OnInit {
   date: string = ""
   AddedDate: Date;
 
-  constructor(private _AddvehiclsService: AddVechilsService) {
+  constructor(private _AddvehiclsService: AddVechilsService,private _Router:Router) {
     this.AddedDate = new Date(this.date);
   }
 
@@ -41,35 +42,27 @@ export class AddVehcilsComponent implements OnInit {
 
   addVehcilsForm(form: FormGroup) {
     this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;
-    let obj = {
-      plateNumber: form.value.PlateNumber,
-      structureNumber: form.value.StructureNumber,
-      Module: form.value.Module,
-      Type: form.value.Type,
-      Color: form.value.Color,
-      VehicleType: Number(form.value.VehicleType),
-      DestinationType: Number(form.value.DestinationType),
-      Notes: form.value.Notes,
-      Image: null,
-      Addedyear:this.date
-    }
-    console.log(obj);
 
     var formData = new FormData();
-    formData.append("PlateNumber", obj.plateNumber);
-    formData.append("StructureNumber", obj.structureNumber);
-    formData.append("Module", obj.Module);
-    formData.append("Type", obj.Type);
-    formData.append("Color", obj.Color);
-    formData.append("VehicleType", obj.VehicleType.toString());
-    formData.append("DestinationType", obj.DestinationType.toString());
-    formData.append("Notes", obj.Notes);
+    formData.append("PlateNumber", form.value.plateNumber);
+    formData.append("StructureNumber", form.value.structureNumber);
+    formData.append("Module", form.value.Module);
+    formData.append("Type", form.value.Type);
+    formData.append("Color", form.value.Color);
+    formData.append("VehicleType", form.value.VehicleType.toString());
+    formData.append("DestinationType", form.value.DestinationType.toString());
+    formData.append("Notes", form.value.Notes);
     formData.append("AddedDate", this.date);
     formData.append("Image", this.selectedFile)
 
     this._AddvehiclsService.addVehcils(formData).subscribe((res) => {
       console.log(res);
-      console.log(obj);
+      
+    if(res.isSuccess){
+       this.addVehcilForm.reset()
+      this.url="../../../assets/images/upload-photo.jpg"
+    }
+     
     })
   }
 
@@ -79,18 +72,20 @@ export class AddVehcilsComponent implements OnInit {
 
     this.selectedFile = e.target.files[0];
     if(e.target.files){
-      console.log(e.target.files);
       var reader=new FileReader()
       reader.readAsDataURL(e.target.files[0])
       reader.onload=(Event:any)=>{
         this.url=Event.target.result
-        console.log(this.url);
-        
-      }
- }
+      }
+}
 
 
 
 
 
+}
+
+back(){
+  this._Router.navigateByUrl("/Home")
+}
 }

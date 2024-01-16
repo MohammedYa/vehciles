@@ -24,6 +24,9 @@ import { SellSmallCarsComponent } from './components/reportsCompnents/sell-small
 import { StatisticsMotorcycleComponent } from './components/reportsCompnents/statistics-motorcycle/statistics-motorcycle.component';
 import { StatisticsBigCarsComponent } from './components/reportsCompnents/statistics-big-cars/statistics-big-cars.component';
 import { StatisticsSmallCarsComponent } from './components/reportsCompnents/statistics-small-cars/statistics-small-cars.component';
+import { SellCarsInPeriodComponent } from './components/reportsCompnents/sell-cars-in-period/sell-cars-in-period.component';
+import { SellMotorcycleInPeriodComponent } from './components/reportsCompnents/sell-motorcycle-in-period/sell-motorcycle-in-period.component';
+import { StatisticsSmallCarsInPeriodComponent } from './components/reportsCompnents/statistics-small-cars-in-period/statistics-small-cars-in-period.component';
 
 
 const routes: Routes = [
@@ -50,6 +53,9 @@ const routes: Routes = [
   {path:'reportsOfStatisticsMotorcycle',canActivate:[AuthGuard],component:StatisticsMotorcycleComponent},
   {path:'reportsOfStatisticsBigCar',canActivate:[AuthGuard],component:StatisticsBigCarsComponent},
   {path:'reportsOfStatisticsSmallCar',canActivate:[AuthGuard],component:StatisticsSmallCarsComponent},
+  {path:'SellCarsInPeriod',canActivate:[AuthGuard],component:SellCarsInPeriodComponent},
+  {path:'SellMotorcycleInPeriod',canActivate:[AuthGuard],component:SellMotorcycleInPeriodComponent},
+  {path:'StatisticsSmallCarsInPeriod',component:StatisticsSmallCarsInPeriodComponent},
  
   {path:'notFound',component:NotfoundComponent},
 

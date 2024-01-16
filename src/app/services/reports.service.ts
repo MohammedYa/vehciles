@@ -63,29 +63,29 @@ getSellBigCars():Observable<any> {
   });
   return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellBigCars',{headers});
 }
-getSellCarsInPeriod(DateFrom:string):Observable<any> {  
+getSellCarsInPeriod(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
   // Create headers with Authorization token
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellCarsInPeriod?DateFrom=${DateFrom}`,{headers});
+  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellCarsInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
-getSellMotorcycleInPeriod(DateFrom:string):Observable<any> {  
+getSellMotorcycleInPeriod(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
   // Create headers with Authorization token
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellMotorcycleInPeriod?DateFrom=${DateFrom}`,{headers});
+  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellMotorcycleInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
-getStatisticsSmallCarsInDate(DateFrom:string):Observable<any> {  
+getStatisticsSmallCarsInDate(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
   // Create headers with Authorization token
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsSmallCarsInDate?DateFrom=${DateFrom}`,{headers});
+  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsSmallCarsInDate?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
 
 }

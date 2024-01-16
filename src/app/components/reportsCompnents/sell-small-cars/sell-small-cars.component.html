@@ -1,11 +1,11 @@
 
 <h2>احصائيات بمبيعات المركبات الصغيرة </h2>
 
-<button class="btn btn-primary m-3 " (click)="exportAsExel()">DownLoad Exel File</button>
+<div class="btns">
+  <button class="btn  m-3 " (click)="exportAsExel()">تنزيل الاحصائية</button>
 <!-- <button class="btn btn-primary m-3 " (click)="exportToPdf()">DownLoad PDF File</button> -->
 <button routerLink="/reports" class="btn1 btn  btn-primary m-3 ">رجوع</button>
-
-
+</div>
 
 <table #table id="table" mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
 
