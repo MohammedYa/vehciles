@@ -60,7 +60,6 @@ if(adddateForm.value.startAddedday=="اليوم"||adddateForm.value.startAddedmo
 
 getSellMotorcycleInPeriod(starDateFrom:string,endDateFrom:string){
     this._ReportsService.getSellMotorcycleInPeriod(starDateFrom,endDateFrom).subscribe((res)=>{
-      console.log(res);
       this.dataSource = new MatTableDataSource<any>(res);
   
     })

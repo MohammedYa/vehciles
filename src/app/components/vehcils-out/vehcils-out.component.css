@@ -99,7 +99,49 @@
   .inputselect2{
   width: 120px;
   }
-
+  .modal-content{
+    margin-top: 70px;
+    z-index: 999;
+    }
+    .modal-title{
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    color: #65145d;
+    
+    }
+    .palte{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0px;
+    
+    }
+    .tab{
+      direction: rtl;
+    }
+    .palte h2{
+      color: #65145d;
+      font-size: 30px;
+    }
+    .info{
+      color: #000;
+      font-size: 30px;
+      display: inline-block;
+    }
+    .recipt{
+    color: #65145d;
+    font-size: 33px ;
+    margin: 20px 0px ;
+    text-align: center;
+    }
+    .modal-footer{
+      text-align: center;
+      justify-content: space-around;
+    }
+    .colse{
+      background-color: red;
+    }
   @media screen and (min-width: 992px) and (max-width: 1200px) {
     .form-box {
       right: 190px;
