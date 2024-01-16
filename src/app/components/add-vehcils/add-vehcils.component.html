@@ -171,10 +171,12 @@
 
             <div class="btn-box mt-3">
 
+             
               <button [disabled]="addVehcilForm.invalid"  class="btn m-1">إضافة</button>
               <button (click)="back()" class="btn m-1">خروج</button>
 
             </div>
+             <h3 *ngIf="succ" class="succ">تمت الاضافة بنجاح </h3>
           </div>
 
         </div>
