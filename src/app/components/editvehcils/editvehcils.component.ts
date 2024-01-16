@@ -44,6 +44,7 @@ addVehcilForm: FormGroup = new FormGroup({
 'Notes': new FormControl(null, [Validators.required]),
 'Image': new FormControl(null)
 })
+
 getVehcils(Id:string){
 
 this._GetVehcilService.getVehciles(Id).subscribe(
@@ -66,11 +67,11 @@ this.addVehcilForm.controls['Notes'].setValue(this.vehcile.notes);
 }
 Back(){
 this._Router.navigateByUrl("/Home")
-} 
+}
 
   updateVehcilsForm(form: FormGroup) {
-    
-    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;    
+
+    this.date = form.value.Addedmonth + "-" + form.value.Addedday + "-" + form.value.Addedyear;
     let obj = {
       plateNumber: form.value.PlateNumber,
       structureNumber: form.value.StructureNumber,
@@ -100,20 +101,29 @@ this._Router.navigateByUrl("/Home")
 
     this._UpdateVehcilsService.updateVehcils(formData).subscribe((res) => {
     if(res.isSuccess){
-   
-      
+
+
       this._Router.navigate(['/VehicleDetails',this.vehcile.plateNumber])
     }
     })
   }
 
-  url: string = '../../../assets/images/add-image 1.png';
+  url: string = "../../../assets/images/upload-photo.jpg";
 
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-  }
+  onFileSelected(e:any ) {
 
-  
- 
+    this.selectedFile = e.target.files[0];
+    if(e.target.files){
+      var reader=new FileReader()
+      reader.readAsDataURL(e.target.files[0])
+      reader.onload=(Event:any)=>{
+        this.url=Event.target.result
+      }
+}
+
+}
+
+
+
 }
 

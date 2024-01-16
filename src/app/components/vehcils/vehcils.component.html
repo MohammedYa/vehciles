@@ -9,8 +9,8 @@
     <div class="box m-auto">
 
       <div *ngFor="let vehcil of vehcils" >
-     
-        
+
+
         <div *ngIf="!vehcil.isDeleted&&condition"  class="img-box">
           <img class="w-100" [src]="vehcil.imageUrl" alt="">
           <div class="layer2">
@@ -18,11 +18,11 @@
           </div>
           <i *ngIf="vehcil.isDeleted" (click)="revertVehcils(vehcil.id)" class="fa-solid fa-clock-rotate-left revert"></i>
         </div>
-     
+
       </div>
       <div *ngFor="let vehcil of vehcils" >
-     
-        
+
+
         <div *ngIf="vehcil.isDeleted&&condition1" class="img-box">
           <img class="w-100" [src]="vehcil.imageUrl" alt="">
           <div class="layer2">
@@ -30,9 +30,9 @@
           </div>
           <i *ngIf="vehcil.isDeleted" (click)="revertVehcils(vehcil.id)" class="fa-solid fa-clock-rotate-left revert"></i>
         </div>
-     
+
       </div>
-     
+
 
     </div>
   </div>

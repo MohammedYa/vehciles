@@ -57,12 +57,12 @@ export class AddVehcilsComponent implements OnInit {
 
     this._AddvehiclsService.addVehcils(formData).subscribe((res) => {
       console.log(res);
-      
+
     if(res.isSuccess){
        this.addVehcilForm.reset()
       this.url="../../../assets/images/upload-photo.jpg"
     }
-     
+
     })
   }
 
@@ -78,10 +78,6 @@ export class AddVehcilsComponent implements OnInit {
         this.url=Event.target.result
       }
 }
-
-
-
-
 
 }
 
