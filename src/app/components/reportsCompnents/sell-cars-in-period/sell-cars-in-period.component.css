@@ -1,4 +1,6 @@
-
+body{
+    padding-bottom: 40px !important;
+}
 .title{
     font-size: 20px;
     font-weight: 600;
@@ -26,24 +28,93 @@ font-size: 400;
 color: #65145D;
 
 }
+.box{
+    box-shadow: 2px 2px 25px 0px #000;
+ width: fit-content;
+ margin-right: 20px;
+ border-radius: 19px;
+ 
+
+}
+.date{
+    margin:50px auto ;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.containDate{
+    text-align: center;
+}
+.containDate button{
+    width: 200px;
+    height: 60px;
+    border-radius: 20px ;
+    background-color: rgb(31, 97, 145);
+    color: #fff;
+    font-size: 30px ;
+    padding: 1px 15px;
+    border: none;
+text-align: center;
+}
+.containDate h4{
+  
+        margin: auto;
+        width: fit-content;
+        font-size: 24px;
+        font-weight: 600;
+        color: red;
+        margin-top: 40px;
+}
+.inputselect,.inputselect2 {
+width: 339px;
+height: 56px;
+border-radius: 19px;
+background: #fff;
+box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1);
+border: none;
+margin-right: 20px;
+margin-bottom: 15px;
+font-size: 18px;
+padding: 10px;
+}
+.inputselect,.inputselect2{
+width: 100px;
+height: 100%;
+margin-right: 10px;
+margin-bottom: 15px;
+}
+.inputselect2{
+width: 120px;
+outline: none !important;
+}
+.box h4{
+font-size: 20px;
+text-align: center;
+color: #65145D;
+font-family: cario;
+font-weight: 600;
+padding-top: 10px;
+}
 .btns{
 width: 50%;
 margin: auto;
 text-align: center;
 }
 .btn{
-width: 200px;
-height: 60px;
-border-radius: 20px ;
-background-color: rgb(64, 231, 64);
-color: #fff;
-font-size: 30px ;
-padding: 1px 15px;
-border: none;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px ;
+    background-color: rgb(64, 231, 64);
+    color: #fff;
+    font-size: 30px ;
+    padding: 1px 15px;
+    border: none;
 }
 .btn1{
-background-color: #65145D;
+    background-color: #65145D;
 }
+
 @media screen and (min-width:992px)and (max-width:1100px) {
 
     .title{

@@ -91,42 +91,42 @@
                       <div class="checkBox-groub p-2">
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="0"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> المرور </label>
+                          id="المرور">
+                        <label class="checkLabel" for="المرور"> المرور </label>
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="1"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> الشرطة </label>
+                          id="الشرطة">
+                        <label class="checkLabel" for="الشرطة"> الشرطة </label>
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="2"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> النيابة </label>
+                          id="النيابة">
+                        <label class="checkLabel" for="النيابة"> النيابة </label>
 
                       </div>
                       <div class="checkBox-groub p-2">
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="3"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> الأمانة </label>
+                          id="الأمانة">
+                        <label class="checkLabel" for="الأمانة"> الأمانة </label>
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="4"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> المكافحة </label>
+                          id="المكافحة">
+                        <label class="checkLabel" for="المكافحة"> المكافحة </label>
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="5"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> المباحث </label>
+                          id="المباحث">
+                        <label class="checkLabel" for="المباحث"> المباحث </label>
 
                       </div>
                       <div class="checkBox-groub p-2">
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="6"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> المحكمة </label>
+                          id="المحكمة">
+                        <label class="checkLabel" for="المحكمة"> المحكمة </label>
 
                         <input formControlName="DestinationType" class="checkInput" type="radio" value="7"
-                          id="flexCheckDefault">
-                        <label class="checkLabel" for="flexCheckDefault"> اخرى </label>
+                          id="اخرى">
+                        <label class="checkLabel" for="اخرى"> اخرى </label>
 
                       </div>
                     </div>
@@ -140,14 +140,14 @@
           <div class="col-xl-5 ">
             <div class="checkBox-groub car-type p-2">
 
-              <input formControlName="VehicleType" class="checkInput" type="radio" value="0" id="flexCheckDefault">
-              <label class="checkLabel" for="flexCheckDefault"> سيارة كبيرة </label>
+              <input formControlName="VehicleType" class="checkInput" type="radio" value="0" id="كبيرة">
+              <label class="checkLabel" for="كبيرة"> سيارة كبيرة </label>
 
-              <input formControlName="VehicleType" class="checkInput" type="radio" value="1" id="flexCheckDefault">
-              <label class="checkLabel" for="flexCheckDefault"> سيارة صغيرة </label>
+              <input formControlName="VehicleType" class="checkInput" type="radio" value="1" id="صغيرة">
+              <label class="checkLabel" for="صغيرة"> سيارة صغيرة </label>
 
-              <input formControlName="VehicleType" class="checkInput" type="radio" value="2" id="flexCheckDefault">
-              <label class="checkLabel" for="flexCheckDefault"> دراجة </label>
+              <input formControlName="VehicleType" class="checkInput" type="radio" value="2" id="دراجة">
+              <label class="checkLabel" for="دراجة"> دراجة </label>
 
             </div>
             <div class="d-flex align-items-center">
@@ -172,8 +172,8 @@
 
             <div class="btn-box mt-3">
 
-              <button class="btn m-1">إضافة</button>
-              <button class="btn m-1">خروج</button>
+              <button [disabled]="addVehcilForm.invalid"  class="btn m-1">إضافة</button>
+              <button (click)="back()" class="btn m-1">خروج</button>
 
             </div>
           </div>

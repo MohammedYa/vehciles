@@ -35,6 +35,9 @@ import { StatisticsMotorcycleComponent } from './components/reportsCompnents/sta
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
+import { SellCarsInPeriodComponent } from './components/reportsCompnents/sell-cars-in-period/sell-cars-in-period.component';
+import { SellMotorcycleInPeriodComponent } from './components/reportsCompnents/sell-motorcycle-in-period/sell-motorcycle-in-period.component';
+import { StatisticsSmallCarsInPeriodComponent } from './components/reportsCompnents/statistics-small-cars-in-period/statistics-small-cars-in-period.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { MatSortModule } from '@angular/material/sort';
     SellSmallCarsComponent,
     SellBigCarsComponent,
     StatisticsMotorcycleComponent,
+    SellCarsInPeriodComponent,
+    SellMotorcycleInPeriodComponent,
+    StatisticsSmallCarsInPeriodComponent,
    
   ],
   imports: [
