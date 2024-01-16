@@ -1,10 +1,10 @@
 <div class="main">
     <div class="layer">
-      <h1>إضافة مركبه / دراجه</h1>
+      <h1>تعديل مركبه / دراجه</h1>
       <div class="container ">
         <form [formGroup]="addVehcilForm" (ngSubmit)="updateVehcilsForm(addVehcilForm)" enctype="multipart/form-data">
           <div class="row">
-  
+
             <div class="col-xl-7 ">
               <div class="form">
                 <table>
@@ -16,7 +16,7 @@
                       <input formControlName="PlateNumber" class="inputEdit " type="text">
                     </td>
                   </tr>
-  
+
                   <tr>
                     <td class="labol-w">
                       <label class="lapelEdit" for=""> رقم الهيكل</label>
@@ -25,7 +25,7 @@
                       <input formControlName="StructureNumber" class="inputEdit " type="text">
                     </td>
                   </tr>
-  
+
                   <tr class="form-info">
                     <td class="labol-w">
                       <label class="lapelEdit" for=""> الموديل</label>
@@ -34,7 +34,7 @@
                       <input formControlName="Module" class="inputEdit " type="text">
                     </td>
                   </tr>
-  
+
                   <tr class="form-info">
                     <td class="labol-w">
                       <label class="lapelEdit" for="">النوع </label>
@@ -43,7 +43,7 @@
                       <input formControlName="Type" class="inputEdit " type="text">
                     </td>
                   </tr>
-  
+
                   <tr class="form-info">
                     <td class="labol-w">
                       <label class="lapelEdit" for="">اللون </label>
@@ -52,7 +52,7 @@
                       <input formControlName="Color" class="inputEdit " type="text">
                     </td>
                   </tr>
-  
+
                   <tr class="form-info">
                     <td class="labol-w">
                       <label class="lapelEdit" for="">تاريخ الدخول </label>
@@ -62,7 +62,7 @@
                         <select formControlName="Addedday" class="inputselect ">
                           <option value="اليوم"disabled >اليوم</option>
                           <option *ngFor="let day of dayes" [value]="day">{{day}}</option>
-                       
+
                         </select>
                         <select  formControlName="Addedmonth"class="inputselect2 ">
                           <option value="الشهر" disabled >الشهر</option>
@@ -79,8 +79,8 @@
                           <option value="11">ذو القعده</option>
                           <option value="12">ذو الحجة</option>
                         </select>
-                        <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة "> 
-  
+                        <input  class="inputselect2 " formControlName="Addedyear" type="text"  placeholder="ادخل  السنة ">
+
                       </div>
                     </td>
                   </tr>
@@ -89,45 +89,45 @@
                     <td>
                       <div class="form-info mx-3">
                         <div class="checkBox-groub p-2">
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="0"
                             id="المرور">
                           <label class="checkLabel" for="المرور"> المرور </label>
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="1"
                             id="الشرطة">
                           <label class="checkLabel" for="الشرطة"> الشرطة </label>
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="2"
                             id="الأمانة">
                           <label class="checkLabel" for="الأمانة"> النيابة </label>
-  
+
                         </div>
                         <div class="checkBox-groub p-2">
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="3"
                             id="flexCheckDefault">
                           <label class="checkLabel" for="flexCheckDefault"> الأمانة </label>
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="4"
                             id="المكافحة">
                           <label class="checkLabel" for="المكافحة"> المكافحة </label>
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="5"
                             id="المباحث">
                           <label class="checkLabel" for="المباحث"> المباحث </label>
-  
+
                         </div>
                         <div class="checkBox-groub p-2">
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="6"
                             id="المحكمة">
                           <label class="checkLabel" for="المحكمة"> المحكمة </label>
-  
+
                           <input formControlName="DestinationType" class="checkInput" type="radio" value="7"
                             id="اخرى">
                           <label class="checkLabel" for="اخرى"> اخرى </label>
-  
+
                         </div>
                       </div>
                     </td>
@@ -135,53 +135,52 @@
                 </table>
               </div>
             </div>
-  
-  
+
+
             <div class="col-xl-5 ">
               <div class="checkBox-groub car-type p-2">
-  
+
                 <input formControlName="VehicleType" class="checkInput" type="radio" value="0" id="كبيرة">
                 <label class="checkLabel" for="كبيرة"> سيارة كبيرة </label>
-  
+
                 <input formControlName="VehicleType" class="checkInput" type="radio" value="1" id="صغيرة">
                 <label class="checkLabel" for="صغيرة"> سيارة صغيرة </label>
-  
+
                 <input formControlName="VehicleType" class="checkInput" type="radio" value="2" id="دراجة">
                 <label class="checkLabel" for="دراجة"> دراجة </label>
-  
+
               </div>
               <div class="d-flex align-items-center">
                 <label class="checkLabel" for="flexCheckDefault"> ملاحظات </label>
                 <textarea formControlName="Notes" class="area-edit" name="" id="" cols="50" rows="8"></textarea>
               </div>
-  
+
               <div class="d-flex align-items-center mt-3 ">
                 <label class="checkLabel" style="width: 300px; height: 60px;" for="flexCheckDefault"> صورة للسيارة /
                   للدراجة </label>
-  
+
                 <div class="addImg">
                   <label for="addPhoto">
-                    <img [src]="url" alt="">
-                    <p>حمل الصورة</p>
+                    <img  [src]="url" alt="">
                   </label>
                 </div>
-                
+
                 <input class="d-none" id="addPhoto" type="file" (change)="onFileSelected($event)">
               </div>
+              
               <h4 *ngIf="er" class="err text-white">*{{error}}</h4>
-  
+
               <div class="btn-box mt-3">
-  
+
                 <button [disabled]="addVehcilForm.invalid " class="btn m-1">تعديل</button>
                 <button (click)="Back()" class="btn m-1">خروج</button>
-  
+
               </div>
             </div>
-  
+
           </div>
         </form>
-  
+
       </div>
     </div>
   </div>
-  
