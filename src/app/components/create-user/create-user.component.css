@@ -87,6 +87,10 @@
 .input-container {
   position: relative;
 }
+.input-container input{
+  color: #fff;
+  font-size: 20px;
+ }
 .icon {
   position: absolute;
   top: 30%;

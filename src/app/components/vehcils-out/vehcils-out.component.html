@@ -21,7 +21,7 @@
               </table>
               <div class="btn-box">
                 <button (click)="saleForm(getOutForm)" class="btn">موافق</button>
-                <button [disabled]="!isSuccess"data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn"> طباعة تقرير</button>
+                <button [disabled]="!isSuccess"[useExistingCss]="true" printSectionId="printSection" ngxPrint class="btn"> طباعة تقرير</button>
                 <a routerLink="/Home" class="btn">خروج</a>
               </div>
             </form>
@@ -34,54 +34,59 @@
   </section>
 
 
-
-
-
-
-  <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div id="printSection" class="rest">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">ادراة حجز المركبات </h1>
+<section class="vechelis-respit d-none " id="printSection">
+    <div class="headers">
+      <div class="head">
+      <h1 class="h-edit"> ادارة حجز المركبات</h1>
+     <img src="../../../assets/images/trafic-preview.png" alt="">
       </div>
-      <div class="modal-body">
-        <h3 class="recipt"> فاتورة اخراج مركبة</h3>
-        <div class="content">
-         <table class="tab">
+      <h3>فاتورة  اخراج  مركبة</h3>
+    </div>
+    <div class="parent">
+  
+      <div class="respit">
+        <table class="tab">
           <tr class="palte">
-            <td> <h2> رقم اللوحة : </h2></td>
-            <td><h4 class="info">{{resipt.PlateNumber}}</h4></td>
+            <td class="title">
+              <h2> رقم اللوحة : </h2>
+            </td>
+            <td>
+              <h4 class="info">{{resipt.PlateNumber}}</h4>
+            </td>
           </tr>
+  
+  
+          <tr class="palte">
+            <td class="title">
+              <h2>  جهةالاخراج: </h2>
+            </td>
+            <td>
+              <h4 class="info">{{resipt.outDestination}}</h4>
+            </td>
+          </tr>
+  
 
+ 
+  
+     
+  
+          <tr class="palte">
            
-
-           <tr class="palte">
-           <td> <h2>جهة الاخراج : </h2> </td>
-            <td><h4 class="info">{{resipt.outDestination}}</h4></td>
-           </tr>
-           
-           <tr class="palte">
-            <td><h2> سبب الاخراج : </h2></td>
-            <td><h4 class="info">{{resipt.caseOfOut}}</h4></td>
-           </tr>
-           
-            <tr class="palte">
-            <td><h2> التوقيت :   </h2></td>
-            <td><h4 class="info">{{resipt.date}}</h4></td>
-            </tr>
-         </table>
-          
-          
+              <td class="title"><h2> سبب الاخراج : </h2></td>
+              <td><h4 class="info">{{resipt.caseOfOut}}</h4></td>
+          </tr>
+  
+  
+        </table>
+      </div>
+  
+      <div class="img-box">
+        <div class="img">
+          <img [src]="" alt="">
         </div>
       </div>
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary colse" data-bs-dismiss="modal">اغلاق</button>
-        <button id="printbtn"printSectionId="printSection" ngxPrint type="button" class="btn btn-primary">طباعة</button>
-      </div>
     </div>
-  </div>
-</div>
+    <div class="signture">
+      <h4>التوقيع /..........................</h4>
+    </div>
+</section>

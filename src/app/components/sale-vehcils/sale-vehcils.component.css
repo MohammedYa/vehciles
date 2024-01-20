@@ -34,7 +34,7 @@
 .form-box {
   margin: auto;
   width: 600px;
-  height: 300px;
+  height: 350px;
   flex-shrink: 0;
   border-radius: 19px;
   background: #fff;
@@ -54,13 +54,19 @@
   line-height: normal;
 }
 .inp {
+  outline: none;
+  color: #65145d;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
   width: 400px;
   height: 40px;
   border-radius: 19px;
-  border: 1px solid #65145d;
+  border: 1px solid #65145d !important;
   background: #fff;
   box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
 }
+
 .btn-box {
   margin-top: 25px;
   display: flex;
@@ -76,48 +82,61 @@
   box-shadow: 2px 2px 25px 0px rgba(255, 255, 255, 0.1) inset;
   color: #fff;
 }
-.modal-content{
-margin-top: 70px;
-z-index: 999;
+.vechelis-respit {
+  width: fit-content;
 }
-.modal-title{
-font-size: 24px;
-font-weight: 600;
-font-style: normal;
-color: #65145d;
 
+.parent {
+  padding: 10px;
+  display: flex;
 }
-.palte{
+.h-edit {
+  color: #65145d;
+  text-align: center;
+  font-family: Cairo;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.headers h3 {
+  color: #65145d;
+  text-align: center;
+  font-family: Cairo;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+.img-box img {
+  width: 80%;
+  height: 65%;
+}
+.modal-content {
+  width: 400px;
+  height: 250px;
+  background-color: rgba(101, 20, 93, 0.9);
+}
+.modal-body {
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.head{
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0px;
-
 }
-.tab{
-  direction: rtl;
+.head img{
+  width: 100px;
+  height: 70px;
 }
-.palte h2{
-  color: #65145d;
-  font-size: 30px;
-}
-.info{
-  color: #000;
-  font-size: 30px;
-  display: inline-block;
-}
-.recipt{
-color: #65145d;
-font-size: 33px ;
-margin: 20px 0px ;
-text-align: center;
-}
-.modal-footer{
-  text-align: center;
-  justify-content: space-around;
-}
-.colse{
-  background-color: red;
+.signture{
+  text-align: left;
+  margin-left: 20px;
 }
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .form-box {

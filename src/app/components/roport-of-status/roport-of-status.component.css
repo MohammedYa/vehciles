@@ -1,0 +1,65 @@
+.roport{
+     padding: 20px;
+   
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    
+}
+.logo{
+    text-align: center;
+}
+.info h3 ,.date h3,.signture h3{
+    font-size: 25px;
+    color: #65145D;
+    font-weight: 600;
+
+}
+.logo h2 {
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 2;
+}
+.logo img{
+    width: 250px;
+}
+.content h5{
+margin-top: 20px;
+font-size: 30px;
+font-style: normal;
+font-weight: 500;
+font-family: cairo;
+}
+.signture{
+    display: grid;
+    justify-content: end; 
+   margin-top: 50px ;
+
+}
+.signture h3{
+    text-align: end;
+    color: #000;
+    width: fit-content;
+}
+.print{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+width: 200px ;
+height: 60px;
+border-radius: 20px;
+color: #fff;
+border: none;
+outline: none;
+background-color: #65145D;
+font-size: 25px;
+margin-bottom: 20px;
+text-align: center;
+
+}

@@ -80,6 +80,11 @@ align-items: center;
     line-height: 52px;
     border-radius: 12px;
 }
+.inp{
+  outline: none;
+  color: #65145d;
+  font-size: 20px;
+}
 .faild{
 color: red;
 }

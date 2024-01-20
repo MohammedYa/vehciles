@@ -42,7 +42,9 @@ export class CreateUserComponent {
     ]
   }
 this._CreateUserService.addUser(obj).subscribe((res)=>{
-this.addUserForm.reset()  
+this.addUserForm.reset() 
+  this.okstatus = false;
+  this.Unstatus = false; 
 },
 (err)=>{
   
