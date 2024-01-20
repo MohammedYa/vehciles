@@ -7,19 +7,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
+          
+          
+          <li class="nav-item">
+          <a class="nav-link ">
+            <img src="assets/images/trafic-preview.png" alt="">
+          </a>
+          </li>
+         
+       
+      </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
             <li *ngIf="isLogin()"class="nav-item">
                 <a class="nav-link" routerLinkActive="active" routerLink="/Home">الرئيسية</a>
-              </li>
+            </li>
             
-              <li  *ngIf="isLogin()&&isAdmin()"class="nav-item">
-                <a class="nav-link "  routerLinkActive="active"  routerLink="/createUser">انشاء حساب </a>
-              </li>
-              <li *ngIf="!isLogin()" class="nav-item">
-                <a class="nav-link"   routerLinkActive="active" routerLink="/Login">تسجيل الدخول </a>
-              </li>
-              <li  *ngIf="isLogin()"class="nav-item">
-                <a class="nav-link"   (click)="logOut()">تسجيل الخروج </a>
-              </li>
+            <li  *ngIf="isLogin()&&isAdmin()"class="nav-item">
+            <a class="nav-link "  routerLinkActive="active"  routerLink="/createUser">انشاء حساب </a>
+            </li>
+            <li *ngIf="!isLogin()" class="nav-item">
+            <a class="nav-link"   routerLinkActive="active" routerLink="/Login">تسجيل الدخول </a>
+            </li>
+            <li  *ngIf="isLogin()"class="nav-item">
+            <a class="nav-link"   (click)="logOut()">تسجيل الخروج </a>
+            </li>
         </ul>
       </div>
     </div>
