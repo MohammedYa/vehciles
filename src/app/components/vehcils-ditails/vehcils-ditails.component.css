@@ -56,6 +56,7 @@ button {
 }
 
 .parent {
+  padding: 10px;
   display: flex;
 }
 .h-edit {
@@ -66,7 +67,6 @@ button {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-bottom: 30px;
 }
 .headers h3 {
   color: #65145d;
@@ -81,7 +81,7 @@ button {
 }
 .img-box img {
   width: 80%;
-  height: 75%;
+  height: 65%;
 }
 .modal-content {
   width: 400px;
@@ -92,6 +92,20 @@ button {
   display: flex !important;
   justify-content: space-evenly;
   align-items: center;
+}
+.head{
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head img{
+  width: 100px;
+  height: 70px;
+}
+.signture{
+  text-align: left;
+  margin-left: 20px;
 }
 .delete {
   border: transparent;

@@ -66,7 +66,7 @@
         <div class="btns text-center">
           <a [routerLink]="['/edit',vehcile.plateNumber]"><input type="button" value="تعديل "> </a>
           <input data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" value="حذف">
-          <button type="button" printSectionId="printSection" ngxPrint value="">طباعة </button>
+          <button  [useExistingCss]="true" printSectionId="printSection" ngxPrint type="button">طباعة </button>
           <a routerLink="/Home"><input type="button" value="خروج"></a>
         </div>
       </div>
@@ -75,9 +75,12 @@
   </div>
 </section>
 
-<section class="vechelis-respit d-none" id="printSection">
+<section class="vechelis-respit  d-none" id="printSection">
   <div class="headers">
-    <h1 class="h-edit">ادارة حجز المركبات</h1>
+    <div class="head">
+    <h1 class="h-edit"> ادارة حجز المركبات</h1>
+   <img src="../../../assets/images/trafic-preview.png" alt="">
+    </div>
     <h3>فاتورة المركبة</h3>
   </div>
   <div class="parent">
@@ -156,6 +159,9 @@
         <img [src]="vehcile.imageUrl" alt="">
       </div>
     </div>
+  </div>
+  <div class="signture">
+    <h4>التوقيع /..........................</h4>
   </div>
 </section>
 

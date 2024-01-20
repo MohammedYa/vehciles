@@ -26,7 +26,7 @@ export class SaleVehcilsComponent implements OnInit {
       "buyingDestination": new FormControl (null ,[Validators.required,Validators.maxLength(15),Validators.minLength(4)]),
       "buyerIdentity": new FormControl (null , [Validators.required,Validators.minLength(4),Validators.maxLength(15)]),
       "value":new FormControl (null, [Validators.required]),
-      "PlateNumber":new FormControl (this.Id,[Validators.required])
+      "PlateNumber":new FormControl (null,[Validators.required])
     }
   )
 

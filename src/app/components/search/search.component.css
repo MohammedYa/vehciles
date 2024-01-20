@@ -48,6 +48,9 @@
   box-shadow: 2px 2px 25px 0px #ffffff1a inset;
   color: #65145d;
   margin-bottom: 15px;
+  outline: none;
+  color: #65145d;
+  font-size: 20px;
 }
 .search form input:focus {
   border: 1px solid #65145d !important ;

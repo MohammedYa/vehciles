@@ -38,7 +38,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { SellCarsInPeriodComponent } from './components/reportsCompnents/sell-cars-in-period/sell-cars-in-period.component';
 import { SellMotorcycleInPeriodComponent } from './components/reportsCompnents/sell-motorcycle-in-period/sell-motorcycle-in-period.component';
 import { StatisticsSmallCarsInPeriodComponent } from './components/reportsCompnents/statistics-small-cars-in-period/statistics-small-cars-in-period.component';
-import{NgxPrintModule}from 'ngx-print'
+import{NgxPrintModule}from 'ngx-print';
+import { RoportOfStatusComponent } from './components/roport-of-status/roport-of-status.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import{NgxPrintModule}from 'ngx-print'
     SellCarsInPeriodComponent,
     SellMotorcycleInPeriodComponent,
     StatisticsSmallCarsInPeriodComponent,
+    RoportOfStatusComponent,
    
   ],
   imports: [

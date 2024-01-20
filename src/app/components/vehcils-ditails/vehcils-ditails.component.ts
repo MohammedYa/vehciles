@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { VehcilsDitailsService } from '../../services/vehcils-ditails.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeleteVehcilService } from '../../services/delete-vehcil.service';
-declare var $:any
-Router
+
+@ViewChild('printSection', { read: ElementRef })
+
 @Component({
   selector: 'app-vehcils-ditails',
   templateUrl: './vehcils-ditails.component.html',
   styleUrl: './vehcils-ditails.component.css'
 })
 export class VehcilsDitailsComponent {
+  @ViewChild('printSection', { read: ElementRef }) printSection!: ElementRef;
   Id:string=""
   vehcile:any={}
   errors:string=""
