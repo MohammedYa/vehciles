@@ -21,7 +21,7 @@ export class EditvehcilsComponent implements OnInit {
   AddedDate: Date;
   Id: string = ""
   vehcile: any = {}
-  url: string = "../../../assets/images/upload-photo.jpg";
+  url: string = "assets/images/upload-photo.jpg";
   constructor(private _UpdateVehcilsService: UpdateVehcilsService, private _Router: Router, private _GetVehcilService: VehcilsDitailsService, private _ActivatedRoute: ActivatedRoute) {
     this.Id = _ActivatedRoute.snapshot.params['Id']
     this.AddedDate = new Date(this.date);

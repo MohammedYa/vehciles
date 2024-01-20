@@ -62,7 +62,7 @@ export class AddVehcilsComponent implements OnInit {
 
     if(res.isSuccess){
        this.addVehcilForm.reset()
-      this.url="../../../assets/images/upload-photo.jpg"
+      this.url="assets/images/upload-photo.jpg"
       setTimeout(() => {
         this.succ = true
 

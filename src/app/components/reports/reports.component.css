@@ -1,11 +1,14 @@
 
 .section {
-    height: 100vh;
+    height: 120vh;
     background-image: url("../../../assets/images/section1.png");
     background-size: cover;
     background-position: center center;
-    inset: 0;
+     top: 0;
+     left: 0;
+     right: 0;
     position: relative;
+    overflow: hidden;
   }
   .layer {
     position: absolute;
@@ -44,6 +47,7 @@
     width: 446px;
     height: 56px;
     border-radius: 19px;
+    margin-top: 20px;
   }
   .back {
     width: 213px !important;
@@ -72,7 +76,7 @@
     width: 100%;
   }
   .section{
-    height: 120vh;
+    height: 130vh;
   }
   }
   
