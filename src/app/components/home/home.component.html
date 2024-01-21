@@ -1,23 +1,109 @@
 <section>
     <div class="section">
-      <div class="layer">
-        <div class="container">
-          <div class="row">
-           <div class="pages">
+      <div class="layer py-3">
+        <div class="pages">
 
-            <a routerLink="/addVehicle">إضافة مركبة / دراجة</a>
-            <a routerLink="/search">البحث عن مركبة / دراجه</a>
-            <a *ngIf="isAdmin"  routerLink="/vehicles"> المركبات </a>
-            <a *ngIf="isAdmin"  routerLink="/Users"> المستخدمين </a>
-            <a routerLink="/saleVehicles">بيع مركبة / دراجة</a>
-            <a routerLink="/scrapeVehicle">سكراب</a>
-            <a routerLink="/vehiclesOut">خروج مركبة / دراجة لسبب أخر</a>
-            <a routerLink="/reports">تقارير / إحصائيات</a>
-            <a class="back" routerLink="">خروج</a>
-           </div>
-          </div>
+        <a class="animate__animated animate__backInUp animate__backInLeft" routerLink="/addVehicle">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/addcar.png" alt="">
+        <h3>إضافة مركبة / دراجة</h3>
+
         </div>
+
+        </div>
+        </a>
+
+        <a class="animate__animated animate__backInUp " routerLink="/search">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/searchcar.png" alt="">
+        <h3>البحث عن مركبة / دراجة</h3>
+
+        </div>
+
+        </div>
+        </a>
+
+        <a class="animate__animated animate__backInRight"*ngIf="isAdmin"  routerLink="/vehicles">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/cars.png" alt="">
+        <h3> المركبات</h3>
+
+        </div>
+
+        </div>
+        </a>
+
+        <a  class="animate__animated animate__backInLeft"*ngIf="isAdmin"  routerLink="/Users">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/user-svgrepo-com 4.png" alt="">
+        <h3>المستخدمين</h3>
+
+        </div>
+
+        </div>
+        </a>
+
+        <a class="animate__animated animate__bounceIn" routerLink="/saleVehicles">
+          <div class="item">
+  
+          <div>
+          <img src="../../../assets/images/addcar.png" alt="">
+          <h3>بيع مركبة / دراجة</h3>
+  
+          </div>
+  
+          </div>
+        </a>
+          
+        <a class="animate__animated animate__backInRight"routerLink="/scrapeVehicle">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/destroying-car.png" alt="">
+        <h3>سكراب</h3>
+
+        </div>
+
+        </div>
+        </a>
+        
+        <a class="animate__animated animate__backInLeft" routerLink="/vehiclesOut">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/Exitcar.png" alt="">
+        <h3> خروج مركبه / دراجه
+لسبب أخر</h3>
+
+        </div>
+
+        </div>
+        </a>
+
+        <a  class="animate__animated  animate__backInRight"routerLink="/reports">
+        <div class="item">
+
+        <div>
+        <img src="../../../assets/images/reports.png" alt="">
+        <h3> تقارير / إحصائيات</h3>
+
+        </div>
+
+        </div>
+        </a>
+      
+ 
+        </div> 
+         <a class="back animate__animated animate__backInDown " routerLink="">خروج</a> 
+
       </div>
     </div>
   </section>
-  

@@ -1,6 +1,6 @@
 
 .section {
-    height: 120vh;
+    height: 130vh;
     background-image: url("../../../assets/images/section1.png");
     background-size: cover;
     background-position: center center;
@@ -76,7 +76,7 @@
     width: 100%;
   }
   .section{
-    height: 130vh;
+    height: 140vh;
   }
   }
   
