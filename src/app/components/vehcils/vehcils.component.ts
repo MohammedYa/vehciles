@@ -34,7 +34,6 @@ export class VehcilsComponent implements OnInit {
     this._GetAllVehcilsService.getAllVehcils().subscribe((res)=>{
       
      this.vehcils=res   
-     console.log(this.vehcils);
 
     })
 
