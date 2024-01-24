@@ -1,5 +1,5 @@
 .section {
-    height: 100vh;
+    height: 82vh;
     background-image: url("../../../assets/images/section1.jpg");
     background-size: cover;
     background-position: center center;
@@ -10,6 +10,7 @@
 position: absolute;
 inset: 0;
 background-color: rgba(101, 20, 93, 0.55);
+
 }
 .layer h2 {
 margin: 40px;

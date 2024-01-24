@@ -16,6 +16,7 @@ constructor(private _UsersService:UsersService){
 getAllUsers(){
 this._UsersService.getAllUsers().subscribe((res)=>{
 this.users=res
+console.log(res);
 
 })
 }

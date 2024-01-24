@@ -16,8 +16,8 @@ export class StatisticsBigCarsComponent implements OnInit{
 [x: string]: any;
   StatisticsBigCars:any=[] 
   table!: ElementRef;
-  
-  displayedColumns: string[] = ['type','color', 'module','plateNumber','structureNumber','destinationType',"scrapDate","vehicleType","buyingDestination" ,'buyerIdentity',"dateOfSell","value"];
+  // ,'buyerIdentity',"buyingDestination"" 
+  displayedColumns: string[] = ['type','color', 'module','plateNumber','structureNumber','destinationType',"scrapDate","vehicleType","dateOfSell","value"];
   dataSource: any;
 
   constructor(private _ReportsService:ReportsService){}
@@ -27,14 +27,14 @@ export class StatisticsBigCarsComponent implements OnInit{
   getStatisticsBigCars(){
     this._ReportsService.getStatisticsBigCars().subscribe((res)=>{   
        this.dataSource = new MatTableDataSource<any>(res);
-  
+      
     })
   }
 
 
 
 
-fileName:string="تقرير عن احصائيات السيارات الكبيرة"
+fileName:string="احصائيات السيارات الكبيرة"
 exportAsExel(){
 // get table 
 let data=document.getElementById("table") 
@@ -45,7 +45,7 @@ const wb:XLSX.WorkBook=XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(wb,ws,'sheet1')
 
 //save to file 
-XLSX.writeFile(wb,'Data.xlsx')
+XLSX.writeFile(wb,`${this.fileName}.xlsx`)
 }
 exportToPdf() {
   const pdfData = document.getElementById('table');

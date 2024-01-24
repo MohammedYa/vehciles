@@ -34,22 +34,21 @@ export class SellMotorcycleInPeriodComponent  implements OnInit{
     
   })
   getDate(adddateForm:FormGroup){
-console.log(adddateForm.value);
 if(adddateForm.value.startAddedday=="اليوم"||adddateForm.value.startAddedmonth=="الشهر"||
    adddateForm.value.endAddedday=="اليوم"||adddateForm.value.endAddedmonth=="الشهر"){
     this.error="التاريخ غير مدخل بشكل صحيح"
-   }else if( adddateForm.value.endAddedyear<=adddateForm.value.startAddedyear){
-    this.error="لا توجد نتائج نظرا لان سنه الانتهاء اكبر من سنة البداية"
+}
+else if( adddateForm.value.endAddedyear<=adddateForm.value.startAddedyear){
+  this.error="لا توجد نتائج نظرا لان سنه الانتهاء اكبر من سنة البداية"
 
-   }
-   else{
-    this.startDate =adddateForm.value.startAddedmonth+ "-" + adddateForm.value.startAddedday + "-" + adddateForm.value.startAddedyear;
-    this.endDate =adddateForm.value.endAddedmonth+ "-" + adddateForm.value.endAddedday + "-" + adddateForm.value.endAddedyear;
-  
-   this.getSellMotorcycleInPeriod(this.startDate,this.endDate);
-   this.error=""
-   
-   }
+}
+else{
+  this.startDate =adddateForm.value.startAddedmonth+ "-" + adddateForm.value.startAddedday + "-" + adddateForm.value.startAddedyear;
+  this.endDate =adddateForm.value.endAddedmonth+ "-" + adddateForm.value.endAddedday + "-" + adddateForm.value.endAddedyear;
+
+  this.getSellMotorcycleInPeriod(this.startDate,this.endDate);
+  this.error=""  
+}
   
   }
   constructor(private _ReportsService:ReportsService){}
@@ -67,7 +66,7 @@ getSellMotorcycleInPeriod(starDateFrom:string,endDateFrom:string){
 
 
 
-fileName:string="تقرير عن احصائيات السيارات الكبيرة"
+fileName:string=" احصائيات الدراجات المباعة خلال فترة "
 exportAsExel(){
 // get table 
 let data=document.getElementById("table") 
@@ -78,12 +77,12 @@ const wb:XLSX.WorkBook=XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(wb,ws,'sheet1')
 
 //save to file 
-XLSX.writeFile(wb,'Data.xlsx')
+XLSX.writeFile(wb,`${this.fileName}.xlsx`)
 }
 exportToPdf() {
   const pdfData = document.getElementById('table');
 
-  html2canvas(pdfData!).then((canvas) => {
+html2canvas(pdfData!).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jspdf('p', 'mm', 'a4');
 

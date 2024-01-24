@@ -35,8 +35,8 @@
   
                     </div>
                     </div>
-                    <!-- <a routerLink="/ForgetPass">هل نسيت كلمه المرور </a> -->
-  
+                    <a routerLink="/ForgetPass">هل نسيت كلمه المرور </a>
+                    <p *ngIf="error" class="text-center fa-2x text-danger mt-4">إسم المسخدم او كلمه المرور غير صحيحه</p>
                     <div class="btn">
                       <button [disabled]="LoginForm.invalid ">تسجيل الدخول </button>
   

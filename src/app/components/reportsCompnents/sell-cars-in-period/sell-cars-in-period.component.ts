@@ -67,7 +67,7 @@ getSellCarsInPeriod(starDateFrom:string,endDateFrom:string){
 
 
 
-fileName:string="تقرير عن احصائيات السيارات الكبيرة"
+fileName:string="احصائيات السيارات المباعة خلال فترة"
 exportAsExel(){
 // get table 
 let data=document.getElementById("table") 
@@ -78,7 +78,7 @@ const wb:XLSX.WorkBook=XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(wb,ws,'sheet1')
 
 //save to file 
-XLSX.writeFile(wb,'Data.xlsx')
+XLSX.writeFile(wb,`${this.fileName}.xlsx`)
 }
 exportToPdf() {
   const pdfData = document.getElementById('table');

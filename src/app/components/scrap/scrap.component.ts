@@ -23,11 +23,11 @@ export class ScrapComponent {
 
     this._VehcilsDitailsService.getVehciles(form.value.PlateNumber).subscribe(
       (res) => {
-        console.log(res);
         this._RevertVehcilService.scrapVehicles(res.id).subscribe(
           (res) => {
 
             if (res.isSuccess) {
+              this.scrapeForm.reset()
               setTimeout(() => {
                 this.massaage = "تمت العمليه بنجاح"
 
