@@ -24,7 +24,10 @@
             </li>
             
             <li  *ngIf="isLogin()&&isAdmin()"class="nav-item">
-            <a class="nav-link "  routerLinkActive="active"  routerLink="/createUser">انشاء حساب </a>
+              <a class="nav-link "  routerLinkActive="active"  routerLink="/createUser">انشاء حساب </a>
+            </li>
+            <li  *ngIf="isLogin()&&isAdmin()"class="nav-item">
+            <a class="nav-link "  routerLinkActive="active"  routerLink="/ForgetPass">تعديل كلمة المرور  </a>
             </li>
             <li *ngIf="!isLogin()" class="nav-item">
             <a class="nav-link"   routerLinkActive="active" routerLink="/Login">تسجيل الدخول </a>

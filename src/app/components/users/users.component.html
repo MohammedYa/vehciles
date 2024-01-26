@@ -29,7 +29,9 @@
               <div class="detl-btn">
                 <button class="delete" (click)="deleteUser(user.id)">حذف</button>
                 <button *ngIf="!user.isConfirmed" class="confirm" (click)="confirmUser(user.id)">تفعيل</button>
-              </div>
+              </div>   
+             <button  class="update" [routerLink]="[ '/ForgetPass',user.id]">تعديل كلمة المرور</button>
+
             </div>
           </div>
           <h5 class="mt-2 text-danger">{{err}}</h5>

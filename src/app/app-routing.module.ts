@@ -35,6 +35,7 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent}, 
   {path:"Home",component:HomeComponent},
   {path:'createUser',canActivate:[AuthGuard,IsAdminGuard],component:CreateUserComponent},
+  {path:'ForgetPass/:id',canActivate:[AuthGuard,IsAdminGuard],component:ForgetPassComponent},
   {path:'ForgetPass',component:ForgetPassComponent},
   {path:'addVehicle',canActivate:[AuthGuard],component:AddVehcilsComponent},
   {path:'search',canActivate:[AuthGuard],component:SearchComponent},

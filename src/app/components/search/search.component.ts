@@ -15,10 +15,7 @@ export class SearchComponent {
       "Id":new FormControl(null,[Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     }
   )
-  // search(form:FormGroup){
-  //   this._Router.navigate(['/VehicleDetails'],form.value.Id)
-  // }
-  // this.Router.navigate(['/VehicleDetails'], { queryParams: { Id: form.value.Id } });
+  
 back(){
   this._Router.navigateByUrl("/Home")
 }

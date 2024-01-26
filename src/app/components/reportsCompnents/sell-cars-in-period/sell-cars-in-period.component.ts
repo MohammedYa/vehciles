@@ -34,7 +34,6 @@ export class SellCarsInPeriodComponent  implements OnInit{
     
   })
   getDate(adddateForm:FormGroup){
-console.log(adddateForm.value);
 if(adddateForm.value.startAddedday=="اليوم"||adddateForm.value.startAddedmonth=="الشهر"||
    adddateForm.value.endAddedday=="اليوم"||adddateForm.value.endAddedmonth=="الشهر"){
     this.error="التاريخ غير مدخل بشكل صحيح"

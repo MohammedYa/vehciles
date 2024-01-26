@@ -1,5 +1,5 @@
 .section {
-    height: 100vh;
+    height: 89vh;
     background-image: url("../../../assets/images/section1.jpg");
     background-size: cover;
     background-position: center center;
@@ -68,6 +68,8 @@
     margin: 20px;
     padding: 35px;
     background-color: transparent;
+    color: #fff;
+    font-size: 20px;
   }
   .formcontainer input::placeholder {
     font-family: Poppins;
@@ -93,7 +95,7 @@
 
     font-size: 30px;
   }
-  .form button {
+  .form button ,.form a {
     margin: auto;
     margin-top: 20px;
     width: 250px;
@@ -108,10 +110,13 @@
     letter-spacing: 0em;
     text-align: center;
     color: rgba(101, 20, 93, 1);
+    display: flex;
+    justify-content: center;
+    text-align: center;
     transition: all 0.05s;
     border: none;
   }
-  .form button:hover {
+  .form button:hover ,.form a{
     color: #fff;
     background-color: rgba(101, 20, 93, 1);
   }

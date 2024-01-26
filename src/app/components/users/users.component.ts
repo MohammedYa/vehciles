@@ -6,7 +6,6 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
-// User:any={}
 err:string=""
 users:any=[]
 isconfirmed:boolean=false
@@ -16,8 +15,6 @@ constructor(private _UsersService:UsersService){
 getAllUsers(){
 this._UsersService.getAllUsers().subscribe((res)=>{
 this.users=res
-console.log(res);
-
 })
 }
 deleteUser(Id:string){
