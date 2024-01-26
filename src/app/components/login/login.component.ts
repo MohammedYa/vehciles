@@ -9,6 +9,7 @@ import { LoginService } from '../../services/login.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  error:boolean=false
   LoginForm:FormGroup=new FormGroup(
     {
       "userName":new FormControl(null,[Validators.minLength(3),Validators.maxLength(30),Validators.required]),
@@ -18,17 +19,22 @@ export class LoginComponent {
 sendLoginForm(form:FormGroup){
 this._LoginService.login(form.value).subscribe(
 (res)=>{
+console.log(res);
 
-if(res.message=="Successfully"){
+if(res.isSuccess==true){
 this.LoginForm.reset()
 localStorage.setItem("userToken",res.data.token)
 localStorage.setItem("isAdmin",res.data.isAdmin)
 this._Router.navigateByUrl('/Home')
 }
 
+
 }
 ,(err)=>{
-
+console.log(err);
+if(err.error.isSuccess==false){
+  this.error=true
+}
 }
 )
 }

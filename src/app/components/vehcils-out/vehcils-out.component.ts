@@ -26,10 +26,7 @@ constructor(private _ActivatedRoute : ActivatedRoute , private _VehcilsOutServic
 getOutForm:FormGroup=new FormGroup(
   {
     "outDestination": new FormControl (null ,[Validators.required,Validators.maxLength(15),Validators.minLength(4)]),
-    "caseOfOut": new FormControl (null , [Validators.required,Validators.minLength(4),Validators.maxLength(15)]),
-    // 'Addedyear': new FormControl(null, [Validators.required]),
-    // 'Addedday': new FormControl("اليوم", [Validators.required]),
-    // 'Addedmonth': new FormControl("الشهر", [Validators.required]),    
+    "caseOfOut": new FormControl (null , [Validators.required,Validators.minLength(4),Validators.maxLength(15)]),   
     "PlateNumber":new FormControl (this.Id,[Validators.required])
   }
 )
@@ -61,7 +58,6 @@ this._SearchService.getVehcilSearch(form.value.PlateNumber).subscribe((res)=>{
       }  
       },
       (er)=>{
-        console.log(er);
         this.error=er.message
       }
   )
