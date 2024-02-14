@@ -8,7 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-
+//http://mohammedramadan-001-site1.htempurl.com/api
+BaseUrl:string='http://localhost:8088/api'
 
   UserData=new BehaviorSubject(null)
   isAdmin=new BehaviorSubject(null)
@@ -20,7 +21,7 @@ export class LoginService {
   }
 
   login(form:any):Observable<any>{
-  return this._HttpClient.post("http://mohammedramadan-001-site1.htempurl.com/api/Login",form)
+  return this._HttpClient.post(`${this.BaseUrl}/Login`,form)
   }
   saveUserData(){
     let encodedToken=localStorage.getItem("userToken")

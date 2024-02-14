@@ -24,7 +24,6 @@ if(res.isSuccess){
 }    
   },
   (error)=>{
-    console.log(error);
     if(error.error.isSuccess== false){
       setTimeout(() => {
         this.err= error.error.message

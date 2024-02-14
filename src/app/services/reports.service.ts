@@ -1,19 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ReportsService {
 
-  constructor(private _HttpClient:HttpClient) { }
+  constructor(private _HttpClient:HttpClient,private _LoginService:LoginService) { }
 getStatisticsBigCars():Observable<any> {  
   const token = localStorage.getItem("userToken");
   // Create headers with Authorization token
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsBigCars',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/StatisticsBigCars`,{headers});
 }
 getStatisticsSmallCars():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -21,7 +22,7 @@ getStatisticsSmallCars():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsSmallCars',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/StatisticsSmallCars`,{headers});
 }
 getStatisticsMotorcycle():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -29,7 +30,7 @@ getStatisticsMotorcycle():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsMotorcycle',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/StatisticsMotorcycle`,{headers});
 }
 getGeneralStatisticsMotorcycle():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -37,7 +38,7 @@ getGeneralStatisticsMotorcycle():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/GeneralStatisticsMotorcycle',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/GeneralStatisticsMotorcycle`,{headers});
 }
 getGeneralStatisticsVihcles():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -45,7 +46,7 @@ getGeneralStatisticsVihcles():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/GeneralStatisticsVihcles',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/GeneralStatisticsVihcles`,{headers});
 }
 getSellSmallCars():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -53,7 +54,7 @@ getSellSmallCars():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellSmallCars',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/SellSmallCars`,{headers});
 }
 getSellBigCars():Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -61,7 +62,7 @@ getSellBigCars():Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellBigCars',{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/SellBigCars`,{headers});
 }
 getSellCarsInPeriod(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -69,7 +70,7 @@ getSellCarsInPeriod(DateFrom:string,DateTO:string):Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellCarsInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/SellCarsInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
 getSellMotorcycleInPeriod(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -77,7 +78,7 @@ getSellMotorcycleInPeriod(DateFrom:string,DateTO:string):Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/SellMotorcycleInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/SellMotorcycleInPeriod?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
 getStatisticsSmallCarsInDate(DateFrom:string,DateTO:string):Observable<any> {  
   const token = localStorage.getItem("userToken");
@@ -85,7 +86,7 @@ getStatisticsSmallCarsInDate(DateFrom:string,DateTO:string):Observable<any> {
   const headers = new HttpHeaders({
   'Authorization': `Bearer ${token}`
   });
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Reports/StatisticsSmallCarsInDate?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Reports/StatisticsSmallCarsInDate?DateFrom=${DateFrom}&DateTo=${DateTO}`,{headers});
 }
 
 }

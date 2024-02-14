@@ -1,6 +1,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class DeleteVehcilService {
         'Authorization': `Bearer ${token}`
       });
 
-   return this._HttpClient.delete(`http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/Delete?Id=${Id}`,{headers});
+   return this._HttpClient.post(`${this._LoginService.BaseUrl}/Vehicles/Delete?Id=${Id}`,null,{headers});
 
   }
-  constructor(private _HttpClient :HttpClient) { }
+  constructor(private _HttpClient :HttpClient,private _LoginService:LoginService) { }
 }

@@ -73,21 +73,21 @@
                     </div>
                     <div class="roleCollection">
                       <label (click)="changeStatusOk()" [ngClass]="{available:okstatus}" for="Admin" class="role  ">
-                        <input class="d-none" type="radio" formControlName="rolesIdList" id="Admin" value="2dfe7f27-1c53-4e58-8ad3-dac73decd5f7">
+                        <input class="d-none" type="radio" formControlName="rolesIdList" id="Admin" [value]="admin">
                         رئيس
                       </label>
                       <label (click)="changeStatusUn()" [ngClass]="{unavailable:Unstatus}" for="employer"
                         class="role unavailable">
-                        <input class="d-none" type="radio" formControlName="rolesIdList" id='employer' value="6f142e63-ebce-46c6-87c4-cf96363be85e">
+                        <input class="d-none" type="radio" formControlName="rolesIdList" id='employer' [value]="user">
                         موظف
                       </label>
   
                     </div>
   
                     <div class="btn">
-                      <button  [disabled]="addUserForm.invalid "> تسجيل </button>
+                      <button > تسجيل </button>
                       <button (click)="clear()">رفض </button>
-  
+   <!-- [disabled]="addUserForm.invalid " -->
                     </div>
   
                   </Form>

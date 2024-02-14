@@ -43,8 +43,14 @@ constructor(private _Router:Router, private _GetVehcilService: VehcilsDitailsSer
     (res)=>{
     if(res.isSuccess){
       this.deleteStatus="تم الحذف بنجاح"
-    }  
+      
+    }        
+
     },
+(err)=>{
+  
+  
+}
 
     )
 

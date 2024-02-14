@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateVehcilsService {
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient:HttpClient,private _LoginService:LoginService) { }
   updateVehcils(form:any):Observable<any>{
     const token = localStorage.getItem("userToken");
       // Create headers with Authorization token
@@ -16,5 +17,5 @@ export class UpdateVehcilsService {
       })
       headers.append('Content-Type', 'multipart/form-data; boundary=your_boundary');
       // You may need to set additional headers based on your API requirements
-    return this._httpClient.put(`http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/Update`,form, {headers})
+    return this._httpClient.post(`${this._LoginService.BaseUrl}/Vehicles/Update`,form, {headers})
 }}
