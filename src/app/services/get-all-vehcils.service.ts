@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GetAllVehcilsService {
-  constructor(private _HttpClient:HttpClient) {}
+  constructor(private _HttpClient:HttpClient,private _LoginService:LoginService) {}
 
 
   getAllVehcils():Observable<any> {
@@ -18,7 +19,7 @@ export class GetAllVehcilsService {
         'Authorization': `Bearer ${token}`
       });
 
-   return this._HttpClient.get('http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/GetAll',{headers});
+   return this._HttpClient.get(`${this._LoginService.BaseUrl}/Vehicles/GetAll`,{headers});
 
   }
 

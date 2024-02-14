@@ -11,6 +11,8 @@ export class CreateUserComponent {
   status: boolean = false;
   okstatus: boolean = false;
   Unstatus: boolean = false;
+  user:string=''
+  admin:string=''
   changeStatusOk() {
     this.Unstatus = false;
     this.okstatus = true;
@@ -23,7 +25,7 @@ export class CreateUserComponent {
     'firstName':new FormControl(null,[Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     'lastName': new FormControl (null,[Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     'userName': new FormControl (null,[Validators.minLength(6),Validators.maxLength(30),Validators.required]),
-    'phoneNumber': new FormControl (null,[Validators.pattern(/^01[0-2,5]{1}[0-9]{8}$/),Validators.required]),
+    'phoneNumber': new FormControl (null,[Validators.required]),
     'password': new FormControl (null,[Validators.pattern(/^[A-Za-z0-9]{6,}$/),Validators.required]),
     'confirmPassword': new FormControl (null,[Validators.pattern(/^[A-Za-z0-9]{6,}$/),Validators.required]),
     'rolesIdList': new FormControl (null,[Validators.required])
@@ -41,6 +43,8 @@ export class CreateUserComponent {
       `${form.value.rolesIdList}`
     ]
   }
+ 
+  
 this._CreateUserService.addUser(obj).subscribe((res)=>{
 this.addUserForm.reset() 
   this.okstatus = false;
@@ -53,5 +57,23 @@ this.addUserForm.reset()
   clear(){
     this.addUserForm.reset()
   }
-constructor(private _CreateUserService:AddUserService){}
+  getAllPermion(){
+    this._CreateUserService.getAllPrimion().subscribe(
+      (res)=>{
+
+        for(let i=0; i<res.length;i++){
+          this.admin=res[0].id
+         this.user=res[1].id
+
+      
+        }
+      
+      }
+    )
+  }
+
+constructor(private _CreateUserService:AddUserService){
+  this.getAllPermion()
+  
+}
 }

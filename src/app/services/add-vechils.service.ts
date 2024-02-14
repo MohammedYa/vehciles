@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddVechilsService {
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient:HttpClient,private _LoginService:LoginService) { }
   addVehcils(form:any):Observable<any>{
 
     const token = localStorage.getItem("userToken");
@@ -25,6 +25,6 @@ export class AddVechilsService {
       //headers.append('Content-Type', 'multipart/form-data')
       
 
-    return this._httpClient.post(`http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/Create`,form, {headers})
+    return this._httpClient.post(`${this._LoginService.BaseUrl}/Vehicles/Create`,form, {headers})
    }
 }

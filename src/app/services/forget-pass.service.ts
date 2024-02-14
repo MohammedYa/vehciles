@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ const headers = new HttpHeaders({
 'Authorization': `Bearer ${token}`
 });
 
-return this._HttpClient.post('http://mohammedramadan-001-site1.htempurl.com/api/Auth/ChangePassword',form,{headers});
+return this._HttpClient.post(`${this._LoginService.BaseUrl}/Auth/ChangePassword`,form,{headers});
 }
 updatePass(form:any):Observable<any>{
 const token = localStorage.getItem("userToken");
@@ -26,7 +27,7 @@ const headers = new HttpHeaders({
 'Authorization': `Bearer ${token}`
 });
 
-return this._HttpClient.post('http://mohammedramadan-001-site1.htempurl.com/api/Auth/UpdateCurrentUserPassword',form,{headers});
+return this._HttpClient.post(`${this._LoginService.BaseUrl}/Auth/UpdateCurrentUserPassword`,form,{headers});
 }
-  constructor(private _HttpClient:HttpClient) { }
+  constructor(private _HttpClient:HttpClient,private _LoginService:LoginService) { }
 }

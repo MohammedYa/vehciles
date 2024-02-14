@@ -19,7 +19,6 @@ export class LoginComponent {
 sendLoginForm(form:FormGroup){
 this._LoginService.login(form.value).subscribe(
 (res)=>{
-console.log(res);
 
 if(res.isSuccess==true){
 this.LoginForm.reset()
@@ -31,7 +30,6 @@ this._Router.navigateByUrl('/Home')
 
 }
 ,(err)=>{
-console.log(err);
 if(err.error.isSuccess==false){
   this.error=true
 }

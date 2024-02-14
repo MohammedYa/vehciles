@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehcilsDitailsService {
 
-  constructor(private _HttpClient:HttpClient) { }
+  constructor(private _HttpClient:HttpClient,private _LoginService:LoginService) { }
   getVehciles(id:string):Observable<any>{
           // Replace 'YOUR_TOKEN_HERE' with the actual token you want to send
           const token = localStorage.getItem("userToken");
@@ -17,6 +18,6 @@ export class VehcilsDitailsService {
             'Authorization': `Bearer ${token}`
           });
       
-  return this._HttpClient.get(`http://mohammedramadan-001-site1.htempurl.com/api/Vehicles/Search?PlateNumber=${id}`,{headers})
+  return this._HttpClient.get(`${this._LoginService.BaseUrl}/Vehicles/Search?PlateNumber=${id}`,{headers})
   }
 }
